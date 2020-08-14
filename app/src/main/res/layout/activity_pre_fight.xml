@@ -32,13 +32,9 @@
               android:layout_weight="1"
               />
 
-    <TextView android:layout_width="match_parent"
-              android:layout_height="0dp"
-              android:layout_weight="0.5"
-              android:text="@string/last_name"
-              style="@style/BigText"
-              android:gravity="bottom|center_horizontal"
-    />
+    <Space android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="0.5"/>
 
     <EditText android:id="@+id/pre_fight_edt_txt_new_user_last_name"
               android:layout_width="match_parent"

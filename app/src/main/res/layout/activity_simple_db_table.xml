@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+    <TableLayout
+            android:id="@+id/simple_db_table_tbl_lout_db_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="6"
+                    android:gravity="center"
+                    android:text="@string/txt_table_name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" >
+            </TextView>
+        </TableRow>
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        >
+            <CheckBox android:id="@+id/simple_db_table_chb_select_all"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+            />
+
+            <TextView
+                    android:text="@string/clmn_id"
+                    android:textStyle="bold"
+                    android:typeface="serif" >
+            </TextView>
+
+            <TextView
+                    android:text="@string/first_name"
+                    android:textStyle="bold"
+                    android:typeface="serif" >
+            </TextView>
+
+            <TextView
+                    android:text="@string/last_name"
+                    android:textStyle="bold"
+                    android:typeface="serif" >
+            </TextView>
+
+            <TextView
+                    android:text="@string/clmn_date_register"
+                    android:textStyle="bold"
+                    android:typeface="serif">
+            </TextView>
+
+            <TextView
+                    android:text="@string/clmn_score"
+                    android:textStyle="bold"
+                    android:typeface="serif" >
+            </TextView>
+
+            <TextView
+                    android:text="@string/clmn_rank"
+                    android:textStyle="bold"
+                    android:typeface="serif" >
+            </TextView>
+        </TableRow>
+
+
+    </TableLayout>
+</ScrollView>

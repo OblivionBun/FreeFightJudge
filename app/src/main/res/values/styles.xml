@@ -1,0 +1,36 @@
+<resources>
+
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    
+    <style name="Header" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@color/colorHeader</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="BigText" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+    <style name="MainText" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/colorMainText</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+    <style name="SeparatingLine" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/colorBlack</item>
+    </style>
+</resources>
