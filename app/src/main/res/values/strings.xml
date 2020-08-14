@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Вольное фехтование</string>
+    <string name="txt_name_person_sample">ПримерИмени ПримерФамилии</string>
+    <string name="txt_guild_sample">«Название гильдии»</string>
+    <string name="txt_profile">Профиль</string>
+    <string name="txt_profile_description">Достижения, клубы, контакты</string>
+    <string name="txt_friends">Бойцы вольного фехтования</string>
+    <string name="txt_friends_description">Друзья и соперники</string>
+    <string name="txt_meeting">Слёты</string>
+    <string name="txt_meeting_description">Участие, проведение, подготовка</string>
+    <string name="txt_fight">Бой</string>
+    <string name="txt_fight_description">Одиночный поединок</string>
+    <string name="txt_table_name">Таблица бойцов</string>
+    <string name="clmn_id">ID</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="clmn_date_register">Дата регистрации</string>
+    <string name="clmn_score">Очки</string>
+    <string name="clmn_rank">Ранг</string>
+    <string name="add_new_user">Добавить</string>
+</resources>
