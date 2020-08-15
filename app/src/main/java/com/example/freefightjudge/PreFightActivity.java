@@ -11,12 +11,15 @@ import com.example.freefightjudge.data.UserInfoDbHelper;
 public class PreFightActivity extends AppCompatActivity {
 
   private EditText edtTxtNewUserFirstName;
+
   private EditText edtTxtNewUserLastName;
 
   private Spinner spnrUserFirst;
+
   private Spinner spnrUserSecond;
 
   private Button btnAddNewUser;
+
   private Button btnEnterUsers;
 
   UserInfoDbHelper userInfoDbHelper;
@@ -29,12 +32,16 @@ public class PreFightActivity extends AppCompatActivity {
 
     edtTxtNewUserFirstName = (EditText) findViewById(R.id.pre_fight_edt_txt_new_user_first_name);
     edtTxtNewUserLastName = (EditText) findViewById(R.id.pre_fight_edt_txt_new_user_last_name);
+
     spnrUserFirst = (Spinner) findViewById(R.id.pre_fight_spnr_user_first);
     spnrUserSecond = (Spinner) findViewById(R.id.pre_fight_spnr_user_second);
+
     btnAddNewUser = (Button) findViewById(R.id.pre_fight_btn_add_new_user);
     btnEnterUsers = (Button) findViewById(R.id.pre_fight_btn_enter_users);
 
     btnAddNewUser.setOnClickListener(onClickListener);
+    // TODO: Перенести эту функцию в SimpleDbTable
+
     btnEnterUsers.setOnClickListener(onClickListener);
 
     userInfoDbHelper = new UserInfoDbHelper(getApplicationContext());

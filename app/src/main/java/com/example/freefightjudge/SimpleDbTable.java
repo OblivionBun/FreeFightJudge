@@ -62,7 +62,7 @@ public class SimpleDbTable extends AppCompatActivity {
         }
         rootTableLayout.addView(tableRows[i]);
       }
-      //TODO возможность редактирования
+      // TODO: Возможность редактирования и добавления новых бойцов
     } else {
       System.out.println("data is NULL");
     }

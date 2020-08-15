@@ -9,4 +9,5 @@ public class User {
   @PrimaryKey
   public int id;
   public String firstName;
+  // TODO: Продолжить изучать Room и переехать на него
 }

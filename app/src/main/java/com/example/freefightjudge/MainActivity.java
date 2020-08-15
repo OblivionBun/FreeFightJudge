@@ -12,11 +12,17 @@ import com.example.freefightjudge.data.UserInfoDbHelper;
 public class MainActivity extends AppCompatActivity {
 
   private ImageButton imgbtnAvatar;
+
   private ImageButton imgbtnTotemon;
+
   private LinearLayout btnLoutProfile;
+
   private LinearLayout btnLoutFriends;
+
   private LinearLayout btnLoutMeeting;
+
   private LinearLayout btnLoutFight;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     imgbtnAvatar = (ImageButton) findViewById(R.id.main_menu_imgbtn_avatar);
     imgbtnTotemon = (ImageButton) findViewById(R.id.main_menu_imgbtn_totemon);
+
     btnLoutProfile = (LinearLayout) findViewById(R.id.main_menu_btnlout_profile);
     btnLoutFriends = (LinearLayout) findViewById(R.id.main_menu_btnlout_friends);
     btnLoutMeeting = (LinearLayout) findViewById(R.id.main_menu_btnlout_meeting);
