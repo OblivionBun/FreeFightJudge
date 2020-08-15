@@ -6,7 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".PreFightActivity">
+        tools:context=".PreFightActivity"
+        style="@style/AppColor"
+>
 
     <TextView android:layout_width="match_parent"
               android:layout_height="0dp"
@@ -32,9 +34,13 @@
               android:layout_weight="1"
               />
 
-    <Space android:layout_width="match_parent"
-           android:layout_height="0dp"
-           android:layout_weight="0.5"/>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.5"
+              android:text="@string/last_name"
+              style="@style/BigText"
+              android:gravity="bottom|center_horizontal"
+    />
 
     <EditText android:id="@+id/pre_fight_edt_txt_new_user_last_name"
               android:layout_width="match_parent"

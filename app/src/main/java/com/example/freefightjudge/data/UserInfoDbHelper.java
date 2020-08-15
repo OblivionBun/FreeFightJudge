@@ -24,6 +24,7 @@ public class UserInfoDbHelper extends SQLiteOpenHelper {
 
     public UserInfoDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -34,7 +35,7 @@ public class UserInfoDbHelper extends SQLiteOpenHelper {
                 + UsersContract.UserInfo.COLUMN_LASTNAME + " TEXT NOT NULL, "
                 + UsersContract.UserInfo.COLUMN_DATEREGISTER + " TEXT NOT NULL, "
                 + UsersContract.UserInfo.COLUMN_RANK + " INTEGER NOT NULL DEFAULT 1, "
-                + UsersContract.UserInfo.COLUMN_SCORE + " INTEGER NOT NULL DEFAULT 0) ;";
+                + UsersContract.UserInfo.COLUMN_SCORE + " INTEGER NOT NULL DEFAULT 0);";
 
         sqLiteDatabase.execSQL(SQL_CREATE_USERINFO_TABLE);
     }
@@ -45,9 +46,6 @@ public class UserInfoDbHelper extends SQLiteOpenHelper {
     }
 
     public void addNewUser(String firstName, String lastName) {
-
-        System.out.println("Сработал аддНьюЮзер");
-
         Calendar calendar = Calendar.getInstance();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String date = dateFormat.format(calendar.getTime());

@@ -37,7 +37,6 @@ public class SimpleDbTable extends AppCompatActivity {
 
             for (int i = 0; i < data.length; i++) {
                 for (int j = 0; j < data[0].length; j++) {
-                    System.out.println(data[0].length);
                     textViews[i][j].setText(data[i][j]);
                 }
             }
