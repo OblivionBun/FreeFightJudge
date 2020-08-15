@@ -10,48 +10,55 @@ import com.example.freefightjudge.data.UserInfoDbHelper;
 
 public class PreFightActivity extends AppCompatActivity {
 
-    private EditText edtTxtNewUserFirstName;
-    private EditText edtTxtNewUserLastName;
+  private EditText edtTxtNewUserFirstName;
 
-    private Spinner spnrUserFirst;
-    private Spinner spnrUserSecond;
+  private EditText edtTxtNewUserLastName;
 
-    private Button btnAddNewUser;
-    private Button btnEnterUsers;
+  private Spinner spnrUserFirst;
 
-    UserInfoDbHelper userInfoDbHelper;
+  private Spinner spnrUserSecond;
+
+  private Button btnAddNewUser;
+
+  private Button btnEnterUsers;
+
+  UserInfoDbHelper userInfoDbHelper;
 
 
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_pre_fight);
 
+    edtTxtNewUserFirstName = (EditText) findViewById(R.id.pre_fight_edt_txt_new_user_first_name);
+    edtTxtNewUserLastName = (EditText) findViewById(R.id.pre_fight_edt_txt_new_user_last_name);
+
+    spnrUserFirst = (Spinner) findViewById(R.id.pre_fight_spnr_user_first);
+    spnrUserSecond = (Spinner) findViewById(R.id.pre_fight_spnr_user_second);
+
+    btnAddNewUser = (Button) findViewById(R.id.pre_fight_btn_add_new_user);
+    btnEnterUsers = (Button) findViewById(R.id.pre_fight_btn_enter_users);
+
+    btnAddNewUser.setOnClickListener(onClickListener);
+    // TODO: Перенести эту функцию в SimpleDbTable
+
+    btnEnterUsers.setOnClickListener(onClickListener);
+
+    userInfoDbHelper = new UserInfoDbHelper(getApplicationContext());
+  }
+
+  View.OnClickListener onClickListener = new View.OnClickListener() {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pre_fight);
-
-        edtTxtNewUserFirstName = (EditText) findViewById(R.id.pre_fight_edt_txt_new_user_first_name);
-        edtTxtNewUserLastName = (EditText) findViewById(R.id.pre_fight_edt_txt_new_user_last_name);
-        spnrUserFirst = (Spinner) findViewById(R.id.pre_fight_spnr_user_first);
-        spnrUserSecond = (Spinner) findViewById(R.id.pre_fight_spnr_user_second);
-        btnAddNewUser = (Button) findViewById(R.id.pre_fight_btn_add_new_user);
-        btnEnterUsers = (Button) findViewById(R.id.pre_fight_btn_enter_users);
-
-        btnAddNewUser.setOnClickListener(onClickListener);
-        btnEnterUsers.setOnClickListener(onClickListener);
-
-        userInfoDbHelper = new UserInfoDbHelper(getApplicationContext());
+    public void onClick(View view) {
+      switch (view.getId()) {
+        case R.id.pre_fight_btn_add_new_user:
+          System.out.println("кейс");
+          userInfoDbHelper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
+              edtTxtNewUserLastName.getText().toString());
+          break;
+        case R.id.pre_fight_btn_enter_users:
+          break;
+      }
     }
-
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.pre_fight_btn_add_new_user:
-                    System.out.println("кейс");
-                    userInfoDbHelper.addNewUser(edtTxtNewUserFirstName.getText().toString(), edtTxtNewUserLastName.getText().toString());
-                    break;
-                case R.id.pre_fight_btn_enter_users:
-                    break;
-            }
-        }
-    };
+  };
 }
