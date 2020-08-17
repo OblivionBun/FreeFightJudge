@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+>
+
+<ScrollView
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         style="@style/AppColor"
@@ -78,3 +84,44 @@
 
     </TableLayout>
 </ScrollView>
+    <LinearLayout
+            android:id="@+id/simple_db_table_lnr_lout_with_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+    >
+        <Button
+                android:id="@+id/simple_db_table_btn_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="@string/delete"
+        />
+
+        <Button
+                android:id="@+id/simple_db_table_btn_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="@string/edit"
+        />
+
+        <Space android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_weight="0.5"
+        />
+
+        <Button
+                android:id="@+id/simple_db_table_btn_start_fight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:layout_margin="5dp"
+                android:text="@string/start_fight"
+        />
+
+    </LinearLayout>
+</RelativeLayout>
