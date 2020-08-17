@@ -15,6 +15,10 @@ public class SimpleDbTable extends AppCompatActivity {
 
   private TableLayout rootTableLayout;
 
+  /**
+   * Метод, вызываемый при создании активити. Выводит на экран информацию о пользователях из базы данных.
+   * @param savedInstanceState
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
