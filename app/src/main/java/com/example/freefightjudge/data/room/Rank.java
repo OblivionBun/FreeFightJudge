@@ -12,4 +12,20 @@ public class Rank {
 
   @ColumnInfo(name = "rank_name")
   private String rankName;
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getRankName() {
+    return rankName;
+  }
+
+  public void setRankName(String rankName) {
+    this.rankName = rankName;
+  }
 }
