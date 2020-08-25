@@ -2,12 +2,13 @@ package com.example.freefightjudge.data.room;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class User {
 
-  @PrimaryKey
+  @PrimaryKey(autoGenerate = true)
   private int id;
 
   @ColumnInfo(name = "first_name")
@@ -19,8 +20,10 @@ public class User {
   @ColumnInfo(name = "date_register")
   private String dateRegister;
 
+  @ColumnInfo(defaultValue = "0")
   private int score;
 
+  @ColumnInfo(defaultValue = "1")
   private int rank;
 
   public int getId() {
@@ -72,5 +75,6 @@ public class User {
   public void setRank(int rank) {
     this.rank = rank;
   }
+
 // TODO: Продолжить изучать Room и переехать на него
 }
