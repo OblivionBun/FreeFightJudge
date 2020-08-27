@@ -5,20 +5,20 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "rank", childColumns = "id"))
+@Entity/*(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "rank", childColumns = "id"))*/
 public class Rank {
   @PrimaryKey
-  private int id;
+  private int rankId;
 
   @ColumnInfo(name = "rank_name")
   private String rankName;
 
   public int getId() {
-    return id;
+    return rankId;
   }
 
   public void setId(int id) {
-    this.id = id;
+    this.rankId = id;
   }
 
   public String getRankName() {

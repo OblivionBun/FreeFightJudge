@@ -20,7 +20,16 @@ public class DataBaseProcessor {
     user.setFirstName(firstName);
     user.setLastName(lastName);
     user.setDateRegister(dateFormat.format(calendar.getTime()));
+
+  }
+
+  public static String[][] getAll() {
+    String[][] data = null;
+
     
+
+
+    return data;
   }
 
 }
