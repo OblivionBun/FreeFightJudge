@@ -1,6 +1,7 @@
 package com.example.freefightjudge.data.room;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Relation;
 
 public class UserWithRank {
   private int id;
@@ -17,14 +18,8 @@ public class UserWithRank {
   @ColumnInfo(defaultValue = "0")
   private int score;
 
-  @ColumnInfo(defaultValue = "1", name = "rank")
-  private int rank;
-
-  @ColumnInfo(name = "rank_id")
-  private int rankId;
-
-  @ColumnInfo(name = "rank_name")
-  private String rankName;
+  @Relation(parentColumn = "id", entityColumn = "rank_id")
+  private Rank rank;
 
   public int getId() {
     return id;
@@ -66,27 +61,11 @@ public class UserWithRank {
     this.score = score;
   }
 
-  public int getRank() {
+  public Rank getRank() {
     return rank;
   }
 
-  public void setRank(int rank) {
+  public void setRank(Rank rank) {
     this.rank = rank;
-  }
-
-  public int getRankId() {
-    return rankId;
-  }
-
-  public void setRankId(int rankId) {
-    this.rankId = rankId;
-  }
-
-  public String getRankName() {
-    return rankName;
-  }
-
-  public void setRankName(String rankName) {
-    this.rankName = rankName;
   }
 }

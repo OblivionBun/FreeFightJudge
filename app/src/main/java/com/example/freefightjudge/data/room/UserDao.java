@@ -7,7 +7,7 @@ import java.util.List;
 
 @Dao
 public interface UserDao {
-  @Query("SELECT * FROM user")
+  @Query("SELECT * FROM user, rank")
   List<UserWithRank> getAllUsersWithRank();
 
   @Query("SELECT * FROM User WHERE id = :id")

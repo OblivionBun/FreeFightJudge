@@ -20,7 +20,6 @@ public class User {
   @ColumnInfo(defaultValue = "0")
   private int score;
 
-  @Relation()
   @ColumnInfo(defaultValue = "1", name = "rank")
   private int rank;
 
