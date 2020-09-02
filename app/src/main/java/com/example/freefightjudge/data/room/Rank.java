@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity/*(foreignKeys = @ForeignKey(entity = User.class, parentColumns = "rank", childColumns = "id"))*/
 public class Rank {
   @PrimaryKey
+  @ColumnInfo(name = "rank_id")
   private int rankId;
 
   @ColumnInfo(name = "rank_name")
