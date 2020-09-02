@@ -8,6 +8,10 @@ public class User {
   @PrimaryKey(autoGenerate = true)
   private int id;
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
   @ColumnInfo(name = "first_name")
   private String firstName;
 
