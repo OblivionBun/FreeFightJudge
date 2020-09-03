@@ -10,7 +10,7 @@ public interface UserDao {
   @Query("SELECT * FROM user, rank")
   List<UserWithRank> getAllUsersWithRank();
 
-  @Query("SELECT * FROM User WHERE id = :id")
+  @Query("SELECT * FROM user WHERE id = :id")
   User getById(int id);
 
   @Insert
