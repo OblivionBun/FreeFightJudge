@@ -8,6 +8,10 @@ public class User {
   @PrimaryKey(autoGenerate = true)
   private int id;
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
   @ColumnInfo(name = "first_name")
   private String firstName;
 
@@ -20,16 +24,11 @@ public class User {
   @ColumnInfo(defaultValue = "0")
   private int score;
 
-  @Relation()
   @ColumnInfo(defaultValue = "1", name = "rank")
   private int rank;
 
   public int getId() {
     return id;
-  }
-
-  public User(int id) {
-    this.id = id;
   }
 
   public User() {}
