@@ -19,7 +19,11 @@ public class UserWithRank {
   private int score;
 
   @Relation(parentColumn = "id", entityColumn = "rank_id")
-  private Rank rank;
+  @ColumnInfo(name = "rank_id")
+  private int rankId;
+
+  @ColumnInfo(name = "rank_name")
+  private String rankName;
 
   public int getId() {
     return id;
@@ -59,13 +63,5 @@ public class UserWithRank {
 
   public void setScore(int score) {
     this.score = score;
-  }
-
-  public Rank getRank() {
-    return rank;
-  }
-
-  public void setRank(Rank rank) {
-    this.rank = rank;
   }
 }
