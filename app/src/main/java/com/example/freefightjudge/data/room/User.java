@@ -31,10 +31,6 @@ public class User {
     return id;
   }
 
-  public User(int id) {
-    this.id = id;
-  }
-
   public User() {}
 
   public String getFirstName() {
