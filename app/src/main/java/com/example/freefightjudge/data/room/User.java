@@ -24,7 +24,7 @@ public class User {
   @ColumnInfo(defaultValue = "0")
   private int score;
 
-  @ColumnInfo(defaultValue = "1", name = "rank")
+  @ColumnInfo(defaultValue = "1")
   private int rank;
 
   public int getId() {
