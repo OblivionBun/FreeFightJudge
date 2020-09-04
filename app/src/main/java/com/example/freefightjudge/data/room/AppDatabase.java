@@ -30,6 +30,7 @@ public abstract class AppDatabase extends RoomDatabase {
   public static String[][] getAll() {
     String[][] data = null;
 
+    UserWithRank userWithRank;
     
 
 
