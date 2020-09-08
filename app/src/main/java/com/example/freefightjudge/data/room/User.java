@@ -8,10 +8,6 @@ public class User {
   @PrimaryKey(autoGenerate = true)
   private int id;
 
-  public void setId(int id) {
-    this.id = id;
-  }
-
   @ColumnInfo(name = "first_name")
   private String firstName;
 
@@ -24,14 +20,18 @@ public class User {
   @ColumnInfo(defaultValue = "0")
   private int score;
 
-  @ColumnInfo(defaultValue = "1", name = "rank")
-  private int rank;
+  @ColumnInfo(name = "rank_id", defaultValue = "1")
+  private int rankId;
+
+  public User() {}
 
   public int getId() {
     return id;
   }
 
-  public User() {}
+  public void setId(int id) {
+    this.id = id;
+  }
 
   public String getFirstName() {
     return firstName;
@@ -65,12 +65,12 @@ public class User {
     this.score = score;
   }
 
-  public int getRank() {
-    return rank;
+  public int getRankId() {
+    return rankId;
   }
 
-  public void setRank(int rank) {
-    this.rank = rank;
+  public void setRankId(int rank) {
+    this.rankId = rank;
   }
 
 // TODO: Продолжить изучать Room и переехать на него
