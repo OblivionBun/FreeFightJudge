@@ -9,17 +9,19 @@ import javax.inject.Singleton;
 
 @Module
 public class ApplicationModule {
+  private final Context context;
   private final Application application;
 
-  public ApplicationModule(Application application) {
+  public ApplicationModule(Context context, Application application) {
+    this.context = context;
     this.application = application;
   }
 
   @Singleton
-  @Provides
   @ApplicationContext
+  @Provides
   Context provideContext() {
-    return application;
+    return context;
   }
 
   @Singleton

@@ -12,7 +12,7 @@ import java.util.ConcurrentModificationException;
 @Database(entities = {User.class, Rank.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
   public abstract UserDao userDao();
-
+/*
   public static void addNewUser(String firstName, String lastName, Context context) {
 
 
@@ -36,5 +36,5 @@ public abstract class AppDatabase extends RoomDatabase {
 
     return data;
   }
-
+*/
 }

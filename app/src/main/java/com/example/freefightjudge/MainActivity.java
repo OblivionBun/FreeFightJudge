@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
   private LinearLayout btnLoutFight;
 
-  @Inject
-  AppDatabase appDatabase;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -57,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
       switch (view.getId()) {
         case R.id.main_menu_btnlout_profile:
           toast = Toast.makeText(getApplicationContext(),
-              "В будущем вместо этого сообщения откроется профиль", Toast.LENGTH_SHORT);
+              "В будущем вместо этого сообщения откроется профиль",
+              Toast.LENGTH_SHORT);
           toast.show();
           break;
         case R.id.main_menu_btnlout_friends:
@@ -66,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
           break;
         case R.id.main_menu_btnlout_meeting:
           toast = Toast.makeText(getApplicationContext(),
-              "В будущем вместо этого сообщения откроется экран слётов", Toast.LENGTH_SHORT);
+              "В будущем вместо этого сообщения откроется экран слётов",
+              Toast.LENGTH_SHORT);
           toast.show();
           break;
         case R.id.main_menu_btnlout_fight:
