@@ -22,11 +22,9 @@ public interface ApplicationComponent {
   void inject (DaggerApplication daggerApplication);
   void inject (DatabaseWrapper databaseWrapper);
 
-  @ApplicationContext
   Context getContext();
 
   Application getApplication();
 
-  @DatabaseInfo
   String getDatabaseName();
 }

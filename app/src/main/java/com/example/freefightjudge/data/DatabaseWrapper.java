@@ -8,12 +8,15 @@ import android.provider.ContactsContract;
 import com.example.freefightjudge.MainActivity;
 import com.example.freefightjudge.data.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
+import com.example.freefightjudge.data.room.Executor;
+import com.example.freefightjudge.data.room.User;
+import com.example.freefightjudge.data.room.UserDao;
 
 import javax.inject.Inject;
 
 public class DatabaseWrapper extends AppCompatActivity {
   @Inject
-  AppDatabase appDatabase;
+  public AppDatabase appDatabase;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +25,8 @@ public class DatabaseWrapper extends AppCompatActivity {
     ((DaggerApplication)getApplication())
         .getApplicationComponent()
         .inject(this);
+
+    final UserDao userDao = appDatabase.userDao();
+    /*Executor.IoThread(() -> userDao.insert(new User()));*/
   }
 }

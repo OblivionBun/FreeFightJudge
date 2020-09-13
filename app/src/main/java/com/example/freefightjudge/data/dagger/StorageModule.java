@@ -12,10 +12,8 @@ import javax.inject.Singleton;
 
 @Module
 public class StorageModule {
-  @ApplicationContext
   private final Context context;
 
-  @DatabaseInfo
   private final String dbName = "database";
 
   public StorageModule(Context context) {
@@ -31,7 +29,6 @@ public class StorageModule {
   }
 
   @Provides
-  @DatabaseInfo
   String provideDatabaseName() {
     return dbName;
   }

@@ -18,7 +18,6 @@ public class ApplicationModule {
   }
 
   @Singleton
-  @ApplicationContext
   @Provides
   Context provideContext() {
     return context;
