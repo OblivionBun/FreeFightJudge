@@ -8,11 +8,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ConcurrentModificationException;
+import java.util.RandomAccess;
 
 @Database(entities = {User.class, Rank.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
   public abstract UserDao userDao();
-
+  public abstract RankDao rankDao();
+/*
   public static void addNewUser(String firstName, String lastName, Context context) {
 
 
@@ -36,5 +38,5 @@ public abstract class AppDatabase extends RoomDatabase {
 
     return data;
   }
-
+*/
 }

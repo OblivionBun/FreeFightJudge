@@ -5,7 +5,10 @@ import android.content.Context;
 import androidx.room.ColumnInfo;
 import androidx.room.Database;
 import com.example.freefightjudge.MainActivity;
+import com.example.freefightjudge.data.DatabaseWrapper;
+
 import dagger.Component;
+import dagger.Provides;
 
 import javax.inject.Singleton;
 import java.sql.DatabaseMetaData;
@@ -16,13 +19,12 @@ import java.sql.DatabaseMetaData;
     StorageModule.class
 })
 public interface ApplicationComponent {
-  void inject (MainActivity mainActivity);
+  void inject (DaggerApplication daggerApplication);
+  void inject (DatabaseWrapper databaseWrapper);
 
-  @ApplicationContext
   Context getContext();
 
   Application getApplication();
 
-  @DatabaseInfo
   String getDatabaseName();
 }

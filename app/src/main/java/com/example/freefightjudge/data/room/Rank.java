@@ -14,12 +14,12 @@ public class Rank {
   @ColumnInfo(name = "rank_name")
   private String rankName;
 
-  public void setRankId(int rankId) {
-    this.rankId = rankId;
-  }
-
   public int getRankId() {
     return rankId;
+  }
+
+  public void setRankId(int rankId) {
+    this.rankId = rankId;
   }
 
   public String getRankName() {

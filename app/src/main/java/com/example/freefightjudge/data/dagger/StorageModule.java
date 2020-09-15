@@ -7,14 +7,13 @@ import com.example.freefightjudge.data.room.UserDao;
 import dagger.Module;
 import dagger.Provides;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Module
 public class StorageModule {
-  @ApplicationContext
   private final Context context;
 
-  @DatabaseInfo
   private final String dbName = "database";
 
   public StorageModule(Context context) {
@@ -24,11 +23,12 @@ public class StorageModule {
   @Singleton
   @Provides
   public AppDatabase provideAppDatabase(Context context) {
-    return Room.databaseBuilder(context, AppDatabase.class, "database").fallbackToDestructiveMigrationOnDowngrade().build();
+    return Room.databaseBuilder(context, AppDatabase.class, "database")
+        .fallbackToDestructiveMigrationOnDowngrade()
+        .build();
   }
 
   @Provides
-  @DatabaseInfo
   String provideDatabaseName() {
     return dbName;
   }
