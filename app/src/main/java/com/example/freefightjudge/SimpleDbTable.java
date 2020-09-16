@@ -7,9 +7,24 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import com.example.freefightjudge.data.UserInfoDbHelper;
 
+import java.time.Duration;
+
 public class SimpleDbTable extends AppCompatActivity {
+  public static final int COLUMN_ID = 0;
+
+  public static final int COLUMN_FIRST_NAME = 1;
+
+  public static final int COLUMN_LAST_NAME = 2;
+
+  public static final int COLUMN_DATE_REGISTER = 3;
+
+  public static final int COLUMN_SCORE = 4;
+
+  public static final int COLUMN_RANK = 5;
 
   private UserInfoDbHelper userInfoDbHelper;
 
@@ -68,7 +83,9 @@ public class SimpleDbTable extends AppCompatActivity {
       }
       // TODO: Возможность редактирования и добавления новых бойцов
     } else {
-      System.out.println("data is NULL");
+      Toast.makeText(getApplicationContext(), "Произошла ошибка в базе данных!" +
+          " Возможно вы не добавили ни одного пользователя!", Toast.LENGTH_SHORT).show();
+
     }
   }
 }

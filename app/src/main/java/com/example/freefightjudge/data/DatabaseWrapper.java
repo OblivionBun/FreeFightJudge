@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 
 import com.example.freefightjudge.MainActivity;
+import com.example.freefightjudge.SimpleDbTable;
 import com.example.freefightjudge.data.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
@@ -21,6 +22,8 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import io.reactivex.internal.subscribers.StrictSubscriber;
 
 public class DatabaseWrapper extends AppCompatActivity {
   @Inject
@@ -66,6 +69,14 @@ public class DatabaseWrapper extends AppCompatActivity {
         userList = userDao.getAllUsersWithRank();
       }
     });
+    for (int i = 0; i < userList.size(); i++) {
+      data[i][SimpleDbTable.COLUMN_ID] = String.valueOf(userList.get(i).getId());
+      data[i][SimpleDbTable.COLUMN_FIRST_NAME] = userList.get(i).getFirstName();
+      data[i][SimpleDbTable.COLUMN_LAST_NAME] = userList.get(i).getLastName();
+      data[i][SimpleDbTable.COLUMN_DATE_REGISTER] = userList.get(i).getDateRegister();
+      data[i][SimpleDbTable.COLUMN_SCORE] = String.valueOf(userList.get(i).getScore());
+      data[i][SimpleDbTable.COLUMN_RANK] = userList.get(i).getRankName();
+    }
 
     return data;
   }
