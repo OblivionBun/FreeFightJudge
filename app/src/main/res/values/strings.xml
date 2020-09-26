@@ -22,4 +22,5 @@
     <string name="edit">Редактировать</string>
     <string name="start_fight">Начать бой!</string>
     <string name="header_fight">Бой</string>
+    <string name="txt_warning">Предупреждение</string>
 </resources>

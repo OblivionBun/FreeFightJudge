@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
           toast = Toast.makeText(getApplicationContext(),
               "В будущем вместо этого сообщения откроется экран слётов",
               Toast.LENGTH_SHORT);
+          intent = new Intent(MainActivity.this, DrawCardsActivity.class);
+          startActivity(intent);
           toast.show();
           break;
         case R.id.main_menu_btnlout_fight:

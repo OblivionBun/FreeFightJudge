@@ -13,9 +13,13 @@
         <activity
                 android:name=".SimpleDbTable"
                 android:screenOrientation="landscape"></activity>
-        <activity android:name=".DrawCardsActivity"></activity>
+        <activity android:name=".DrawCardsActivity"
+            android:label="@string/txt_fight">
+        </activity>
         <activity android:name=".PreFightActivity"></activity>
-        <activity android:name=".FightActivity"></activity>
+        <activity android:name=".FightActivity"
+                android:label="@string/txt_fight">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
