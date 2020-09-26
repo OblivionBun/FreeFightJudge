@@ -9,21 +9,51 @@
         android:orientation="vertical"
         style="@style/AppColor"
 >
-    <LinearLayout
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
         <ImageButton
                 android:id="@+id/fight_imgbtn_warning_first"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/fight_txt_warning"
                 android:layout_margin="5dp"/>
         <TextView
-                android:layout_width="0dp"
+                android:id="@+id/fight_txt_warning"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/txt_warning"/>
-    </LinearLayout>
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/txt_warning"
+                style="@style/BigText"/>
+        <ImageButton
+                android:id="@+id/fight_imgbtn_warning_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@id/fight_txt_warning"
+                android:layout_margin="5dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="Первый боец"
+                style="@style/BigText"/>
 
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                />
+    </RelativeLayout>
 </LinearLayout>
