@@ -10,9 +10,9 @@
         style="@style/AppColor"
         >
 
-    <!-- <androidx.appcompat.widget.Toolbar
+     <androidx.appcompat.widget.Toolbar
             android:id="@+id/draw_cards_tbar"
-            style="@style/Toolbar"/> -->
+            style="@style/Toolbar"/>
 
     <!--<RelativeLayout style="@style/Header">
         <ImageButton

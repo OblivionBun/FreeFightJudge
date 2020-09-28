@@ -23,4 +23,6 @@
     <string name="start_fight">Начать бой!</string>
     <string name="header_fight">Бой</string>
     <string name="txt_warning">Предупреждение</string>
+    <string name="fight_txt_left">Осталось</string>
+    <string name="fight_txt_summary_score">Поединок до х очков</string>
 </resources>

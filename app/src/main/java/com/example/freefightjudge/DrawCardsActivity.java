@@ -13,5 +13,6 @@ public class DrawCardsActivity extends AppCompatActivity {
     setContentView(R.layout.activity_draw_cards);
 
     toolbar = findViewById(R.id.draw_cards_tbar);
+    toolbar.setTitle(R.string.app_name);
   }
 }
