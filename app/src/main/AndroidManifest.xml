@@ -10,8 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".data.DatabaseWrapper"></activity>
-        <activity
-                android:name=".SimpleDbTable"
+        <activity android:name=".SimpleDbTable"
                 android:screenOrientation="landscape"></activity>
         <activity android:name=".DrawCardsActivity"
             android:label="@string/txt_fight">

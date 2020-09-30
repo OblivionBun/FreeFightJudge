@@ -8,10 +8,20 @@
         tools:context=".FightActivity"
         android:orientation="vertical"
         style="@style/AppColor">
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fight_tbar"
+            style="@style/Toolbar"/>
+
+    <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+    </com.google.android.material.tabs.TabLayout>
+
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/colorPrimaryLight">
+            android:background="#C8D7DD">
 
         <ImageButton
                 android:id="@+id/fight_imgbtn_warning_first"
@@ -19,11 +29,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_toStartOf="@+id/fight_txt_warning"
-                android:background="@android:color/transparent"
+                android:background="@color/colorThirdDark"
                 android:src="@android:drawable/stat_sys_warning" />
 
         <TextView
@@ -44,7 +53,7 @@
                 android:layout_toEndOf="@id/fight_txt_warning"
                 android:layout_margin="5dp"
                 android:src="@android:drawable/stat_sys_warning"
-                android:background="@android:color/transparent"/>
+                android:background="@color/colorSecondaryDark"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -98,11 +107,12 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@+id/fight_rltvlout_score_separator"
+                android:layout_marginHorizontal="30dp"
                 android:gravity="center"
                 android:text="9"
                 android:textSize="@android:dimen/notification_large_icon_width"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorThirdDark"/>
+                android:textColor="@color/colorBlack"
+                android:background="@color/colorThird"/>
 
         <RelativeLayout
                 android:id="@+id/fight_rltvlout_score_separator"
@@ -115,18 +125,17 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_alignParentTop="true"
+                    android:layout_marginHorizontal="5dp"
                     android:text="@string/fight_txt_left"
                     style="@style/BigText"/>
 
-            <TextView
+            <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fight_txt_left"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:gravity="top"
-                    android:text=":"
-                    android:textSize="@android:dimen/notification_large_icon_height"/>
+                    android:src="@drawable/img_colon"/>
         </RelativeLayout>
 
         <TextView
@@ -135,11 +144,12 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@+id/fight_rltvlout_score_separator"
+                android:layout_marginHorizontal="30dp"
                 android:gravity="center"
                 android:text="9"
                 android:textSize="@android:dimen/notification_large_icon_width"
                 android:textColor="@color/colorWhite"
-                android:background="@color/colorSecondaryDark"/>
+                android:background="@color/colorSecondary"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -151,7 +161,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@id/fight_lnrlout_button_3"/>
+                android:layout_toStartOf="@id/fight_lnrlout_button_3"
+                android:background="@android:color/transparent"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_3"
@@ -181,7 +192,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@id/fight_lnrlout_button_3"/>
+                android:layout_toEndOf="@id/fight_lnrlout_button_3"
+                android:background="@android:color/transparent"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -193,7 +205,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@id/fight_lnrlout_button_2"/>
+                android:layout_toStartOf="@id/fight_lnrlout_button_2"
+                android:background="@android:color/transparent"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_2"
@@ -223,7 +236,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@id/fight_lnrlout_button_2"/>
+                android:layout_toEndOf="@id/fight_lnrlout_button_2"
+                android:background="@android:color/transparent"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -235,7 +249,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@id/fight_lnrlout_button_1"/>
+                android:layout_toStartOf="@id/fight_lnrlout_button_1"
+                android:background="@android:color/transparent"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_1"
@@ -265,6 +280,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@id/fight_lnrlout_button_1"/>
+                android:layout_toEndOf="@id/fight_lnrlout_button_1"
+                android:background="@android:color/transparent"/>
     </RelativeLayout>
 </LinearLayout>
