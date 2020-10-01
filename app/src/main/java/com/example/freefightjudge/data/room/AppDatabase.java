@@ -14,29 +14,4 @@ import java.util.RandomAccess;
 public abstract class AppDatabase extends RoomDatabase {
   public abstract UserDao userDao();
   public abstract RankDao rankDao();
-/*
-  public static void addNewUser(String firstName, String lastName, Context context) {
-
-
-    Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
-
-    User user = new User();
-
-    user.setFirstName(firstName);
-    user.setLastName(lastName);
-    user.setDateRegister(dateFormat.format(calendar.getTime()));
-
-  }
-
-  public static String[][] getAll() {
-    String[][] data = null;
-
-    UserWithRank userWithRank;
-    
-
-
-    return data;
-  }
-*/
 }

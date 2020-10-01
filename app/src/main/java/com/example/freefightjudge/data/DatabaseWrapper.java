@@ -2,8 +2,11 @@ package com.example.freefightjudge.data;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Looper;
 import android.provider.ContactsContract;
+import android.widget.Toast;
 
 import com.example.freefightjudge.MainActivity;
 import com.example.freefightjudge.SimpleDbTable;
@@ -57,25 +60,38 @@ public class DatabaseWrapper extends AppCompatActivity {
     user.setLastName(lastName);
     user.setDateRegister(date);
 
-    Executor.IoThread(() -> userDao.insert(user));
+    userDao.insert(user);
+    Executor.IoThread(new Runnable() {
+      @Override
+      public void run() {
+        userDao.insert(user);
+      }
+    });
   }
 
   public String[][] getAllUsers() {
     String[][] data = null;
 
-    Executor.IoThread(new Runnable() {
-      @Override
-      public void run() {
-        userList = userDao.getAllUsersWithRank();
+      Executor.IoThread(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            userList = userDao.getAllUsersWithRank();
+          } catch (Exception e) {
+            System.out.println("catch e in Executer getAll");
+          }
+        }
+      });
+    if (userList == null) {
+    } else {
+      for (int i = 0; i < userList.size(); i++) {
+        data[i][SimpleDbTable.COLUMN_ID] = String.valueOf(userList.get(i).getId());
+        data[i][SimpleDbTable.COLUMN_FIRST_NAME] = userList.get(i).getFirstName();
+        data[i][SimpleDbTable.COLUMN_LAST_NAME] = userList.get(i).getLastName();
+        data[i][SimpleDbTable.COLUMN_DATE_REGISTER] = userList.get(i).getDateRegister();
+        data[i][SimpleDbTable.COLUMN_SCORE] = String.valueOf(userList.get(i).getScore());
+        data[i][SimpleDbTable.COLUMN_RANK] = userList.get(i).getRankName();
       }
-    });
-    for (int i = 0; i < userList.size(); i++) {
-      data[i][SimpleDbTable.COLUMN_ID] = String.valueOf(userList.get(i).getId());
-      data[i][SimpleDbTable.COLUMN_FIRST_NAME] = userList.get(i).getFirstName();
-      data[i][SimpleDbTable.COLUMN_LAST_NAME] = userList.get(i).getLastName();
-      data[i][SimpleDbTable.COLUMN_DATE_REGISTER] = userList.get(i).getDateRegister();
-      data[i][SimpleDbTable.COLUMN_SCORE] = String.valueOf(userList.get(i).getScore());
-      data[i][SimpleDbTable.COLUMN_RANK] = userList.get(i).getRankName();
     }
 
     return data;
