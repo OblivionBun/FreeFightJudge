@@ -51,8 +51,10 @@
             <ImageView
                     android:id="@+id/draw_cards_imgbtn_score_card"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/card_score_00"
+                    android:scaleType="centerInside"/>
             <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -69,7 +71,7 @@
                         android:id="@+id/draw_cards_txt_description_score_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Подробное описание карты"
+                        android:text="Подробное описание карты, растянувшееся на несколько строк"
                         style="@style/MainText"/>
             </LinearLayout>
         </LinearLayout>
@@ -84,8 +86,10 @@
                 <ImageView
                         android:id="@+id/draw_cards_imgbtn_fight_card"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_height="match_parent"
+                        android:src="@drawable/card_fight_00"
+                        android:layout_weight="1"
+                        android:scaleType="centerInside"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -108,7 +112,6 @@
             </LinearLayout>
 
             <View style="@style/SeparatingLine"/>
-
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -117,8 +120,10 @@
                 <ImageView
                         android:id="@+id/draw_cards_imgbtn_time_card"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_time_00"
+                        android:scaleType="centerInside"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -150,8 +155,10 @@
                 <ImageView
                         android:id="@+id/draw_cards_imgbtn_area_card"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_area_00"
+                        android:scaleType="centerInside"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -183,8 +190,10 @@
                 <ImageView
                         android:id="@+id/draw_cards_imgbtn_mod_card"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_mod_00"
+                        android:scaleType="centerInside"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -217,8 +226,10 @@
                 <ImageView
                         android:id="@+id/draw_cards_imgbtn_mad_card"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_mad_00"
+                        android:scaleType="centerInside"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -229,7 +240,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Тут будут имена бойцов и вопрос: вскрываем ли фиолетовую карту"
-                            style="@style/MainText"/>
+                            style="@style/BigText"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
