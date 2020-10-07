@@ -3,11 +3,11 @@ package com.example.freefightjudge;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class FightTabAdapter extends FragmentPagerAdapter {
+public class FightTabAdapter extends FragmentStatePagerAdapter {
   public FightTabAdapter(@NonNull FragmentManager fm) {
-    super(fm);
+    super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
   }
 
   public FightTabAdapter(@NonNull FragmentManager fm, int behavior) {
@@ -17,7 +17,10 @@ public class FightTabAdapter extends FragmentPagerAdapter {
   @NonNull
   @Override
   public Fragment getItem(int position) {
-    return null;
+    switch (position) {
+      default:
+        return null;
+    }
   }
 
   @Override
@@ -25,4 +28,4 @@ public class FightTabAdapter extends FragmentPagerAdapter {
     return 0;
   }
 }
-}
+
