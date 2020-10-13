@@ -1,17 +1,13 @@
-package com.example.freefightjudge.data.dagger;
+package com.example.freefightjudge.dagger;
 
 import android.app.Application;
 import android.content.Context;
-import androidx.room.ColumnInfo;
-import androidx.room.Database;
-import com.example.freefightjudge.MainActivity;
+
 import com.example.freefightjudge.data.DatabaseWrapper;
 
 import dagger.Component;
-import dagger.Provides;
 
 import javax.inject.Singleton;
-import java.sql.DatabaseMetaData;
 
 @Singleton
 @Component(modules = {

@@ -7,6 +7,10 @@ import android.widget.Toolbar;
 public class FightActivity extends AppCompatActivity {
   private Toolbar toolbar;
 
+  private FightTabAdapter fightTabAdapter;
+
+  private PageFragment pageFragment;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

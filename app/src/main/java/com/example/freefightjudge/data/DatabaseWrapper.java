@@ -2,18 +2,12 @@ package com.example.freefightjudge.data;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Looper;
-import android.provider.ContactsContract;
-import android.widget.Toast;
 
-import com.example.freefightjudge.MainActivity;
 import com.example.freefightjudge.SimpleDbTable;
-import com.example.freefightjudge.data.dagger.DaggerApplication;
+import com.example.freefightjudge.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
-import com.example.freefightjudge.data.room.Rank;
 import com.example.freefightjudge.data.room.RankDao;
 import com.example.freefightjudge.data.room.User;
 import com.example.freefightjudge.data.room.UserDao;
@@ -25,8 +19,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
-
-import io.reactivex.internal.subscribers.StrictSubscriber;
 
 public class DatabaseWrapper extends AppCompatActivity {
   @Inject
