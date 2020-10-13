@@ -51,6 +51,7 @@ public class DatabaseWrapper extends AppCompatActivity {
     user.setFirstName(firstName);
     user.setLastName(lastName);
     user.setDateRegister(date);
+    //TODO: попробавть внести все значения
 
     userDao.insert(user);
     Executor.IoThread(new Runnable() {
