@@ -139,10 +139,10 @@ public class UserInfoDbHelper extends SQLiteOpenHelper {
       cursor.close();
 
     } catch (Exception e) {
-      Toast toast = new Toast(context);
+      /*Toast toast = new Toast(context);
       toast.setText("Произошла ошибка в базе данных!"
           + "Возможно Вы не добавили ни одного пользователя.");
-      toast.show();
+      toast.show();*/
     }
 
     return data;

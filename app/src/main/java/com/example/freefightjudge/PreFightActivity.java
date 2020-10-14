@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.freefightjudge.data.DatabaseWrapper;
 import com.example.freefightjudge.data.UserInfoDbHelper;
 
 public class PreFightActivity extends AppCompatActivity {
@@ -22,7 +24,7 @@ public class PreFightActivity extends AppCompatActivity {
 
   private Button btnEnterUsers;
 
-  UserInfoDbHelper userInfoDbHelper;
+  DatabaseWrapper databaseWrapper;
 
 
   @Override
@@ -44,7 +46,7 @@ public class PreFightActivity extends AppCompatActivity {
 
     btnEnterUsers.setOnClickListener(onClickListener);
 
-    userInfoDbHelper = new UserInfoDbHelper(getApplicationContext());
+    databaseWrapper = new DatabaseWrapper();
   }
 
   View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -53,7 +55,7 @@ public class PreFightActivity extends AppCompatActivity {
       switch (view.getId()) {
         case R.id.pre_fight_btn_add_new_user:
           System.out.println("кейс");
-          userInfoDbHelper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
+          databaseWrapper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
               edtTxtNewUserLastName.getText().toString());
           break;
         case R.id.pre_fight_btn_enter_users:

@@ -1,4 +1,4 @@
-package com.example.freefightjudge.data.dagger;
+package com.example.freefightjudge.dagger;
 
 import android.app.Application;
 import android.content.Context;

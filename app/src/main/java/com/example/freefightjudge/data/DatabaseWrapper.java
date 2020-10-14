@@ -3,13 +3,11 @@ package com.example.freefightjudge.data;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 
-import com.example.freefightjudge.MainActivity;
-import com.example.freefightjudge.data.dagger.DaggerApplication;
+import com.example.freefightjudge.SimpleDbTable;
+import com.example.freefightjudge.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
-import com.example.freefightjudge.data.room.Rank;
 import com.example.freefightjudge.data.room.RankDao;
 import com.example.freefightjudge.data.room.User;
 import com.example.freefightjudge.data.room.UserDao;
@@ -53,19 +51,41 @@ public class DatabaseWrapper extends AppCompatActivity {
     user.setFirstName(firstName);
     user.setLastName(lastName);
     user.setDateRegister(date);
+    //TODO: попробавть внести все значения
 
-    Executor.IoThread(() -> userDao.insert(user));
+    userDao.insert(user);
+    Executor.IoThread(new Runnable() {
+      @Override
+      public void run() {
+        userDao.insert(user);
+      }
+    });
   }
 
   public String[][] getAllUsers() {
     String[][] data = null;
 
-    Executor.IoThread(new Runnable() {
-      @Override
-      public void run() {
-        userList = userDao.getAllUsersWithRank();
+      Executor.IoThread(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            userList = userDao.getAllUsersWithRank();
+          } catch (Exception e) {
+            System.out.println("catch e in Executer getAll");
+          }
+        }
+      });
+    if (userList == null) {
+    } else {
+      for (int i = 0; i < userList.size(); i++) {
+        data[i][SimpleDbTable.COLUMN_ID] = String.valueOf(userList.get(i).getId());
+        data[i][SimpleDbTable.COLUMN_FIRST_NAME] = userList.get(i).getFirstName();
+        data[i][SimpleDbTable.COLUMN_LAST_NAME] = userList.get(i).getLastName();
+        data[i][SimpleDbTable.COLUMN_DATE_REGISTER] = userList.get(i).getDateRegister();
+        data[i][SimpleDbTable.COLUMN_SCORE] = String.valueOf(userList.get(i).getScore());
+        data[i][SimpleDbTable.COLUMN_RANK] = userList.get(i).getRankName();
       }
-    });
+    }
 
     return data;
   }

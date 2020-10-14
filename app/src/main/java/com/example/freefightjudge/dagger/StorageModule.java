@@ -1,4 +1,4 @@
-package com.example.freefightjudge.data.dagger;
+package com.example.freefightjudge.dagger;
 
 import android.content.Context;
 import androidx.room.Room;
@@ -7,7 +7,6 @@ import com.example.freefightjudge.data.room.UserDao;
 import dagger.Module;
 import dagger.Provides;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Module

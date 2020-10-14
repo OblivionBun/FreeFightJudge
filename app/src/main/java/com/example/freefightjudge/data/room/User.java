@@ -72,6 +72,4 @@ public class User {
   public void setRankId(int rank) {
     this.rankId = rank;
   }
-
-// TODO: Продолжить изучать Room и переехать на него
 }
