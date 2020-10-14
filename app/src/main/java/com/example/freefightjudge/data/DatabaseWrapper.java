@@ -1,6 +1,7 @@
 package com.example.freefightjudge.data;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.os.Bundle;
 
@@ -37,7 +38,7 @@ public class DatabaseWrapper extends AppCompatActivity {
     ((DaggerApplication)getApplication())
         .getApplicationComponent()
         .inject(this);
-
+    
     userDao = appDatabase.userDao();
     rankDao = appDatabase.rankDao();
   }
@@ -51,8 +52,7 @@ public class DatabaseWrapper extends AppCompatActivity {
     user.setFirstName(firstName);
     user.setLastName(lastName);
     user.setDateRegister(date);
-    //TODO: попробавть внести все значения
-
+    
     userDao.insert(user);
     Executor.IoThread(new Runnable() {
       @Override

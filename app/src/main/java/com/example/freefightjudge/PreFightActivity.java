@@ -1,5 +1,6 @@
 package com.example.freefightjudge;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,6 +60,8 @@ public class PreFightActivity extends AppCompatActivity {
               edtTxtNewUserLastName.getText().toString());
           break;
         case R.id.pre_fight_btn_enter_users:
+          Intent intent = new Intent(PreFightActivity.this, FightActivity.class);
+          startActivity(intent);
           break;
       }
     }

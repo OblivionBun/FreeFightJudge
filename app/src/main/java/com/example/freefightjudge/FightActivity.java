@@ -1,10 +1,11 @@
 package com.example.freefightjudge;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+
 import android.os.Bundle;
-import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
 
