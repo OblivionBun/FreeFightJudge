@@ -50,16 +50,22 @@ public class DatabaseWrapper extends AppCompatActivity {
 
     User user = new User();
     user.setFirstName(firstName);
+    System.out.println("fristname " + firstName + " is added");
     user.setLastName(lastName);
+    System.out.println("lastname " + lastName + " is added");
     user.setDateRegister(date);
-    
-    userDao.insert(user);
+    System.out.println("date " + date + " is added");
+    user.setRankId(0);
+    user.setScore(0);
+  
+    System.out.println("Start Executor");
     Executor.IoThread(new Runnable() {
       @Override
       public void run() {
         userDao.insert(user);
       }
     });
+    System.out.println("End Executor");
   }
 
   public String[][] getAllUsers() {
@@ -71,7 +77,7 @@ public class DatabaseWrapper extends AppCompatActivity {
           try {
             userList = userDao.getAllUsersWithRank();
           } catch (Exception e) {
-            System.out.println("catch e in Executer getAll");
+            System.out.println("catch " + e + " in Executor getAll");
           }
         }
       });

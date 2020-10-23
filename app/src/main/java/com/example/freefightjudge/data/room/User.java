@@ -17,10 +17,10 @@ public class User {
   @ColumnInfo(name = "date_register")
   private String dateRegister;
 
-  @ColumnInfo(defaultValue = "0")
+  @ColumnInfo()
   private int score;
 
-  @ColumnInfo(name = "rank_id", defaultValue = "1")
+  @ColumnInfo(name = "rank_id")
   private int rankId;
 
   public User() {}
