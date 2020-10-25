@@ -3,6 +3,7 @@ package com.example.freefightjudge.dagger;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.freefightjudge.PreFightActivity;
 import com.example.freefightjudge.data.DatabaseWrapper;
 
 import dagger.Component;
@@ -14,9 +15,9 @@ import javax.inject.Singleton;
     ApplicationModule.class,
     StorageModule.class
 })
-public interface ApplicationComponent {
+public interface ApplicationComponent{
   void inject (DaggerApplication daggerApplication);
-  void inject (DatabaseWrapper databaseWrapper);
+  void inject (PreFightActivity preFightActivity);
 
   Context getContext();
 

@@ -5,6 +5,7 @@ import androidx.room.Room;
 
 import android.os.Bundle;
 
+import com.example.freefightjudge.MainActivity;
 import com.example.freefightjudge.SimpleDbTable;
 import com.example.freefightjudge.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
@@ -23,7 +24,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 public class DatabaseWrapper extends AppCompatActivity {
-  @Inject
+  //@Inject
   public AppDatabase appDatabase;
   
   @Inject
@@ -55,6 +56,8 @@ public class DatabaseWrapper extends AppCompatActivity {
     ((DaggerApplication)getApplication())
         .getApplicationComponent()
         .inject(this);
+    MainActivity mainActivity = new MainActivity();
+    appDatabase = Room.databaseBuilder(mainActivity.getAC(), AppDatabase.class, dbName).build();
     userDao = appDatabase.userDao();
     
     User user = new User();

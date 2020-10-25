@@ -1,5 +1,6 @@
 package com.example.freefightjudge;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+  public Context getAC(){ //TODO: delete this shit
+    return getApplicationContext();
+  }
+  
   View.OnClickListener onClickListener = new View.OnClickListener() {
     @Override
     public void onClick(View view) {

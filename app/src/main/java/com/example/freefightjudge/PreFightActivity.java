@@ -6,10 +6,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
 import android.os.Bundle;
 
 import com.example.freefightjudge.data.DatabaseWrapper;
 import com.example.freefightjudge.data.UserInfoDbHelper;
+import com.example.freefightjudge.data.room.AppDatabase;
+import com.example.freefightjudge.data.room.Executor;
+import com.example.freefightjudge.data.room.User;
+import com.example.freefightjudge.data.room.UserDao;
 
 public class PreFightActivity extends AppCompatActivity {
 
