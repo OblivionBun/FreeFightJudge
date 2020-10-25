@@ -32,6 +32,7 @@
               android:layout_marginStart="20dp"
               android:layout_marginEnd="20dp"
               android:layout_weight="1"
+              android:textColor="@color/colorBlack"
               />
 
     <TextView android:layout_width="match_parent"
@@ -48,7 +49,8 @@
               android:layout_marginStart="20dp"
               android:layout_marginEnd="20dp"
               android:layout_weight="1"
-              />
+              android:textColor="@color/colorBlack"
+            />
 
     <Space android:layout_width="match_parent"
            android:layout_height="0dp"

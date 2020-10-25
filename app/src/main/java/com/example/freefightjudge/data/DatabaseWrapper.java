@@ -9,6 +9,7 @@ import com.example.freefightjudge.SimpleDbTable;
 import com.example.freefightjudge.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
+import com.example.freefightjudge.data.room.Rank;
 import com.example.freefightjudge.data.room.RankDao;
 import com.example.freefightjudge.data.room.User;
 import com.example.freefightjudge.data.room.UserDao;
@@ -24,6 +25,9 @@ import javax.inject.Inject;
 public class DatabaseWrapper extends AppCompatActivity {
   @Inject
   public AppDatabase appDatabase;
+  
+  @Inject
+  public String dbName;
 
   private List<UserWithRank> userList;
 
@@ -35,19 +39,24 @@ public class DatabaseWrapper extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    ((DaggerApplication)getApplication())
+    /*((DaggerApplication)getApplication())
         .getApplicationComponent()
         .inject(this);
     
     userDao = appDatabase.userDao();
-    rankDao = appDatabase.rankDao();
+    rankDao = appDatabase.rankDao();*/
   }
 
   public void addNewUser(String firstName, String lastName) {
     Calendar calendar = Calendar.getInstance();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     String date = dateFormat.format(calendar.getTime());
-
+    
+    ((DaggerApplication)getApplication())
+        .getApplicationComponent()
+        .inject(this);
+    userDao = appDatabase.userDao();
+    
     User user = new User();
     user.setFirstName(firstName);
     System.out.println("fristname " + firstName + " is added");

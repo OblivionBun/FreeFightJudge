@@ -22,9 +22,7 @@ public class StorageModule {
   @Singleton
   @Provides
   public AppDatabase provideAppDatabase(Context context) {
-    return Room.databaseBuilder(context, AppDatabase.class, "database")
-        .fallbackToDestructiveMigrationOnDowngrade()
-        .build();
+    return Room.databaseBuilder(context, AppDatabase.class, dbName).build();
   }
 
   @Provides
