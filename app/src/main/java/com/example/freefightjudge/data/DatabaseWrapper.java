@@ -8,7 +8,6 @@ import android.os.Bundle;
 import com.example.freefightjudge.MainActivity;
 import com.example.freefightjudge.PreFightActivity;
 import com.example.freefightjudge.SimpleDbTable;
-import com.example.freefightjudge.dagger.DaggerApplication;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
 import com.example.freefightjudge.data.room.Rank;
@@ -23,6 +22,8 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import dagger.android.DaggerApplication;
 
 public class DatabaseWrapper extends AppCompatActivity {
   //@Inject
@@ -54,9 +55,6 @@ public class DatabaseWrapper extends AppCompatActivity {
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     String date = dateFormat.format(calendar.getTime());
     
-    ((DaggerApplication)getApplication())
-        .getApplicationComponent()
-        .inject();
     MainActivity mainActivity = new MainActivity();
     appDatabase = Room.databaseBuilder(mainActivity.getAC(), AppDatabase.class, dbName).build();
     userDao = appDatabase.userDao();
