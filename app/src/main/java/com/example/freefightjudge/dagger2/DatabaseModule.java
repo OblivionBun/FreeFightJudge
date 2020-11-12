@@ -1,19 +1,42 @@
 package com.example.freefightjudge.dagger2;
 
-import com.example.freefightjudge.PreFightActivity;
-import com.example.freefightjudge.data.DatabaseWrapper;
+import android.content.Context;
+
+import androidx.room.Room;
+
 import com.example.freefightjudge.data.room.AppDatabase;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import dagger.Provides;
 
 @Module
-public interface DatabaseModule {
-  @Singleton
-  AppDatabase appDatabase();
+public class DatabaseModule {
+  @Inject
+  @Named("databaseContext")
+  public Context context;
   
-  @ContributesAndroidInjector(modules = {DatabaseWrapperModule.class})
-  DatabaseWrapper dataBaseWrapperInjector();
+  /*public DatabaseModule(Context context) {
+    this.context = context;
+  }*/
+  
+  @Provides
+  @Singleton
+  AppDatabase provideAppDatabase() {
+    System.out.println("provide DB");
+    return Room.databaseBuilder(context, AppDatabase.class,
+        AppDatabase.DB_NAME).fallbackToDestructiveMigration().build();
+  }
+  
+  /*@Provides
+  @Singleton
+  public String providedbName() {
+    return AppDatabase.DB_NAME;
+  }*/
+  
+/*  @ContributesAndroidInjector(modules = {DatabaseWrapperModule.class})
+  abstract DatabaseWrapper dataBaseWrapperInjector();*/
 }

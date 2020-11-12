@@ -12,6 +12,9 @@ import java.util.RandomAccess;
 
 @Database(entities = {User.class, Rank.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
+  public static final String DB_NAME = "database";
+  
   public abstract UserDao userDao();
+  
   public abstract RankDao rankDao();
 }

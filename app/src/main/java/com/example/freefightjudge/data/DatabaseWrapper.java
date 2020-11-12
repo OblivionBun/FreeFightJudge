@@ -2,12 +2,14 @@ package com.example.freefightjudge.data;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import android.os.Bundle;
 
 import com.example.freefightjudge.MainActivity;
 import com.example.freefightjudge.PreFightActivity;
 import com.example.freefightjudge.SimpleDbTable;
+import com.example.freefightjudge.dagger2.App;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
 import com.example.freefightjudge.data.room.Rank;
@@ -26,11 +28,11 @@ import javax.inject.Inject;
 import dagger.android.DaggerApplication;
 
 public class DatabaseWrapper extends AppCompatActivity {
-  //@Inject
+  @Inject
   public AppDatabase appDatabase;
   
-  @Inject
-  public String dbName;
+ /* @Inject
+  public String dbName;*/
 
   private List<UserWithRank> userList;
 
@@ -51,13 +53,15 @@ public class DatabaseWrapper extends AppCompatActivity {
   }
 
   public void addNewUser(String firstName, String lastName) {
+  
+    
+    
+    
     Calendar calendar = Calendar.getInstance();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     String date = dateFormat.format(calendar.getTime());
     
-    MainActivity mainActivity = new MainActivity();
-    appDatabase = Room.databaseBuilder(mainActivity.getAC(), AppDatabase.class, dbName).build();
-    userDao = appDatabase.userDao();
+    /*userDao = appDatabase.userDao();*/
     
     User user = new User();
     user.setFirstName(firstName);
@@ -68,15 +72,19 @@ public class DatabaseWrapper extends AppCompatActivity {
     System.out.println("date " + date + " is added");
     user.setRankId(0);
     user.setScore(0);
-  
-    System.out.println("Start Executor");
-    Executor.IoThread(new Runnable() {
-      @Override
-      public void run() {
-        userDao.insert(user);
-      }
-    });
-    System.out.println("End Executor");
+    
+    ((App)getApplication()).getAppComponent().inject(this);
+    final UserDao userDao = appDatabase.userDao();
+    Executor.IoThread(() -> userDao.insert(new User()));
+    
+//    System.out.println("Start Executor");
+//    Executor.IoThread(new Runnable() {
+//      @Override
+//      public void run() {
+//        userDao.insert(user);
+//      }
+//    });
+//    System.out.println("End Executor");
   }
 
   public String[][] getAllUsers() {
