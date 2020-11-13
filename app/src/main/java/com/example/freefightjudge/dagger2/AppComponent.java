@@ -1,10 +1,9 @@
 package com.example.freefightjudge.dagger2;
 
-import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 
 import com.example.freefightjudge.data.DatabaseWrapper;
-import com.example.freefightjudge.data.room.AppDatabase;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -12,7 +11,6 @@ import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
-import dagger.android.AndroidInjector;
 
 @Singleton
 @Component(modules = {DatabaseModule.class, AndroidInjectionModule.class})
@@ -23,14 +21,11 @@ public interface AppComponent {
     @BindsInstance
     Builder context(Context context);
     
-    @BindsInstance
-    Builder databaseContext(@Named("databaseContext") Context context);
-    
     Builder databaseModule(DatabaseModule databaseModule);
     
-   /*@BindsInstance
-   Builder databaseModule(DatabaseModule databaseModule);*/
-   
+    @BindsInstance
+    Builder dbContext(@Named("db_context") Context context);
+    
     AppComponent build();
   }
   

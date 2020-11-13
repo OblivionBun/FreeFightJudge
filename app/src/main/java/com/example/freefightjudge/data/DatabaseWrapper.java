@@ -1,18 +1,14 @@
 package com.example.freefightjudge.data;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
 import android.os.Bundle;
 
-import com.example.freefightjudge.MainActivity;
-import com.example.freefightjudge.PreFightActivity;
 import com.example.freefightjudge.SimpleDbTable;
 import com.example.freefightjudge.dagger2.App;
+import com.example.freefightjudge.dagger2.AppComponent;
 import com.example.freefightjudge.data.room.AppDatabase;
 import com.example.freefightjudge.data.room.Executor;
-import com.example.freefightjudge.data.room.Rank;
 import com.example.freefightjudge.data.room.RankDao;
 import com.example.freefightjudge.data.room.User;
 import com.example.freefightjudge.data.room.UserDao;
@@ -25,9 +21,9 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import dagger.android.DaggerApplication;
+import dagger.android.support.DaggerAppCompatActivity;
 
-public class DatabaseWrapper extends AppCompatActivity {
+public class DatabaseWrapper extends DaggerAppCompatActivity {
   @Inject
   public AppDatabase appDatabase;
   
@@ -43,20 +39,24 @@ public class DatabaseWrapper extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    /*((DaggerApplication)getApplication())
-        .getApplicationComponent()
-        .inject(this);
+  }
+  
+  public DatabaseWrapper() {
+    System.out.println("Сработал конструктор ДатабазеВраппера");
+    
+    //((App)getApplication()).getAppComponent().inject(this);
+    
+    App app = new App();
+    System.out.println(app);
+    AppComponent appComponent = app.getAppComponent();
+    System.out.println(appComponent);
+    appComponent.inject(this);
     
     userDao = appDatabase.userDao();
-    rankDao = appDatabase.rankDao();*/
+    rankDao = appDatabase.rankDao();
   }
 
   public void addNewUser(String firstName, String lastName) {
-  
-    
-    
-    
     Calendar calendar = Calendar.getInstance();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     String date = dateFormat.format(calendar.getTime());
@@ -72,10 +72,8 @@ public class DatabaseWrapper extends AppCompatActivity {
     System.out.println("date " + date + " is added");
     user.setRankId(0);
     user.setScore(0);
+  
     
-    ((App)getApplication()).getAppComponent().inject(this);
-    final UserDao userDao = appDatabase.userDao();
-    Executor.IoThread(() -> userDao.insert(new User()));
     
 //    System.out.println("Start Executor");
 //    Executor.IoThread(new Runnable() {

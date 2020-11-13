@@ -42,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
     btnLoutFight.setOnClickListener(onClickListener);
 
   }
-
-  public Context getAC(){ //TODO: delete this shit
-    return getApplicationContext();
-  }
   
   View.OnClickListener onClickListener = new View.OnClickListener() {
     @Override

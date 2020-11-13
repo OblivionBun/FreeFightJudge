@@ -2,6 +2,7 @@ package com.example.freefightjudge.dagger2;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import androidx.room.Room;
 
@@ -16,7 +17,7 @@ import dagger.android.DispatchingAndroidInjector_Factory;
 import dagger.android.HasAndroidInjector;
 
 public class App extends Application implements HasAndroidInjector {
-  protected AppComponent appComponent;
+  public AppComponent appComponent;
   
   @Inject
   DispatchingAndroidInjector<Object> dispatchingAndroidInjector;
@@ -24,19 +25,24 @@ public class App extends Application implements HasAndroidInjector {
   @Override
   public void onCreate() {
     super.onCreate();
-    
+    System.out.println("Сработал онКреате в Апп");
     appComponent = DaggerAppComponent
         .builder()
         .context(this)
-        /*.databaseContext(getApplicationContext())*/
         .databaseModule(new DatabaseModule())
         .build();
         
     appComponent.inject(this);
+    System.out.println(appComponent);
   }
   
   public AppComponent getAppComponent() {
-    return appComponent;
+    System.out.println(appComponent + " on getAppComp");
+    return DaggerAppComponent
+        .builder()
+        .context(this)
+        .databaseModule(new DatabaseModule())
+        .build();
   }
   
   @Override

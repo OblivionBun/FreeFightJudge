@@ -10,13 +10,14 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
 public class DatabaseModule {
   @Inject
-  @Named("databaseContext")
+  @Named("db_context")
   public Context context;
   
   /*public DatabaseModule(Context context) {
