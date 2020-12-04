@@ -23,8 +23,8 @@ public interface AppComponent {
     
     Builder databaseModule(DatabaseModule databaseModule);
     
-    @BindsInstance
-    Builder dbContext(@Named("db_context") Context context);
+/*    @BindsInstance
+    Builder dbContext(@Named("db_context") Context context);*/
     
     AppComponent build();
   }

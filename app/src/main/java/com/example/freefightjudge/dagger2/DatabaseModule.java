@@ -17,7 +17,7 @@ import dagger.Provides;
 @Module
 public class DatabaseModule {
   @Inject
-  @Named("db_context")
+/*  @Named("db_context")*/
   public Context context;
   
   /*public DatabaseModule(Context context) {

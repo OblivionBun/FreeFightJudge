@@ -37,7 +37,8 @@ public class App extends Application implements HasAndroidInjector {
   }
   
   public AppComponent getAppComponent() {
-    System.out.println(appComponent + " on getAppComp");
+    System.out.println(appComponent + " on getAppComp()");
+    System.out.println(this + "on getAppComp()");
     return DaggerAppComponent
         .builder()
         .context(this)
