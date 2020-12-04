@@ -54,8 +54,8 @@ public class PageFragment extends Fragment {
       case 1:
         return inflater.inflate(R.layout.fragment_card, container, false);
       case 2:
-        return inflater.inflate(R.layout.fragment_card, container, false);
-        //TODO: Создать франгменты для снаряжения и боя
+        return inflater.inflate(R.layout.fragment_fight, container, false);
+        //TODO: Создать франгмент для снаряжения
       default:
         return null;
     }

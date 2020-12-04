@@ -2,8 +2,12 @@ package com.example.freefightjudge.dagger2;
 
 import android.app.Activity;
 import android.app.Application;
+import android.app.Service;
 import android.content.Context;
+import android.content.Intent;
+import android.os.IBinder;
 
+import androidx.annotation.Nullable;
 import androidx.room.Room;
 
 import com.example.freefightjudge.data.room.AppDatabase;
@@ -16,7 +20,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.DispatchingAndroidInjector_Factory;
 import dagger.android.HasAndroidInjector;
 
-public class App extends Application implements HasAndroidInjector {
+public class App extends Service implements HasAndroidInjector {
   public AppComponent appComponent;
   
   @Inject
@@ -28,7 +32,7 @@ public class App extends Application implements HasAndroidInjector {
     System.out.println("Сработал онКреате в Апп");
     appComponent = DaggerAppComponent
         .builder()
-        .context(this)
+        .context(getApplicationContext())
         .databaseModule(new DatabaseModule())
         .build();
         
@@ -36,14 +40,21 @@ public class App extends Application implements HasAndroidInjector {
     System.out.println(appComponent);
   }
   
+  @Nullable
+  @Override
+  public IBinder onBind(Intent intent) {
+    return null;
+  }
+  
   public AppComponent getAppComponent() {
-    System.out.println(appComponent + " on getAppComp()");
-    System.out.println(this + "on getAppComp()");
-    return DaggerAppComponent
+    System.out.println(appComponent + " on appComp in getAppComp");
+    AppComponent component = DaggerAppComponent
         .builder()
-        .context(this)
+        .context(getApplicationContext())
         .databaseModule(new DatabaseModule())
         .build();
+    System.out.println(component + " on component in getAppComp");
+    return component;
   }
   
   @Override
