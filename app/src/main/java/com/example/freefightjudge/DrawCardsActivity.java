@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.freefightjudge.cards.AreaCardsProperties;
 import com.example.freefightjudge.cards.CardsProperties;
-import com.example.freefightjudge.cards.FightCardsProporties;
+import com.example.freefightjudge.cards.FightCardsProperties;
 import com.example.freefightjudge.cards.ModCardsProperties;
 import com.example.freefightjudge.cards.ScoreCardsProperties;
 import com.example.freefightjudge.cards.TimeCardsProperties;
@@ -49,7 +49,7 @@ public class DrawCardsActivity extends AppCompatActivity {
           cardsProperties[i].setRandom(random.nextInt());
           break;
         case 1: //fight card
-          cardsProperties[i] = new FightCardsProporties();
+          cardsProperties[i] = new FightCardsProperties();
           cardsProperties[i].setRandom(random.nextInt());
           break;
         case 2: //time card

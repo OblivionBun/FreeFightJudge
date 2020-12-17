@@ -1,6 +1,6 @@
 package com.example.freefightjudge.cards;
 
-public class FightCardsProporties implements CardsProperties {
+public class FightCardsProperties implements CardsProperties {
   private int random;
   
   private int imageId;

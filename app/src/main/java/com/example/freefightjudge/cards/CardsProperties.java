@@ -1,8 +1,8 @@
 package com.example.freefightjudge.cards;
 
 public interface CardsProperties {
-  int getRandom();
-  void setRandom(int number);
+  int getRandomCard();
   int getImageId();
   void setImageId(int imageId);
+  int[] getWeights();
 }
