@@ -1,27 +1,20 @@
 package com.example.freefightjudge.cards;
 
-public class ModCardsProperties implements CardsProperties {
-  private int number;
-  
-  private int imageId;
-  
-  @Override
-  public int getRandom() {
-    return number;
-  }
-  
-  @Override
-  public void setRandom(int number) {
-    this.number = number;
-  }
-  
-  @Override
-  public int getImageId() {
-    return imageId;
-  }
-  
-  @Override
-  public void setImageId(int imageId) {
-    this.imageId = imageId;
+import com.example.freefightjudge.R;
+
+public class ModCardsProperties extends CardsProperties {
+  ModCardsProperties() {
+    //ID of cards
+    cardsIdAndWeight[0][0] = R.drawable.card_mod_01;
+    cardsIdAndWeight[1][0] = R.drawable.card_mod_02;
+    cardsIdAndWeight[2][0] = R.drawable.card_mod_03;
+    cardsIdAndWeight[3][0] = R.drawable.card_mod_04;
+    cardsIdAndWeight[4][0] = R.drawable.card_mod_05;
+    //weights of cards
+    cardsIdAndWeight[0][1] = 4;
+    cardsIdAndWeight[1][1] = 2;
+    cardsIdAndWeight[2][1] = 2;
+    cardsIdAndWeight[3][1] = 1;
+    cardsIdAndWeight[4][1] = 1;
   }
 }
