@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class FightCardsProperties extends CardsProperties {
   // Заполнение конструктора конкретными значениями ID и весов карт для корректной роботы
-  FightCardsProperties() {
+  public FightCardsProperties() {
     //ID of cards
     cardsIdAndWeight[0][0] = R.drawable.card_fight_01;
     cardsIdAndWeight[1][0] = R.drawable.card_fight_02;

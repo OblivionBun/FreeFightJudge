@@ -3,7 +3,7 @@ package com.example.freefightjudge.cards;
 import com.example.freefightjudge.R;
 
 public class AreaCardsProperties extends CardsProperties {
-  AreaCardsProperties() {
+  public AreaCardsProperties() {
     //ID of cards
     cardsIdAndWeight[0][0] = R.drawable.card_area_01;
     cardsIdAndWeight[1][0] = R.drawable.card_area_02;

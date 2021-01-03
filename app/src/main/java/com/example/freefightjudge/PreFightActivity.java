@@ -31,7 +31,7 @@ public class PreFightActivity extends AppCompatActivity {
 
   private Button btnEnterUsers;
 
-  DatabaseWrapper databaseWrapper;
+  //DatabaseWrapper databaseWrapper;
 
 
   @Override
@@ -53,7 +53,7 @@ public class PreFightActivity extends AppCompatActivity {
 
     btnEnterUsers.setOnClickListener(onClickListener);
 
-    databaseWrapper = new DatabaseWrapper();
+    //databaseWrapper = new DatabaseWrapper();
   }
 
   View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -62,11 +62,11 @@ public class PreFightActivity extends AppCompatActivity {
       switch (view.getId()) {
         case R.id.pre_fight_btn_add_new_user:
           System.out.println("кейс");
-          databaseWrapper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
-              edtTxtNewUserLastName.getText().toString());
+          //databaseWrapper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
+          //    edtTxtNewUserLastName.getText().toString());
           break;
         case R.id.pre_fight_btn_enter_users:
-          Intent intent = new Intent(PreFightActivity.this, FightActivity.class);
+          Intent intent = new Intent(PreFightActivity.this, DrawCardsActivity.class);
           startActivity(intent);
           break;
       }

@@ -12,7 +12,7 @@
             android:id="@+id/fight_tbar"
             style="@style/Toolbar"/>
 
-    <com.google.android.material.tabs.TabLayout
+<!--    <com.google.android.material.tabs.TabLayout
             android:id="@+id/fight_tablout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -22,7 +22,7 @@
     <androidx.viewpager.widget.ViewPager
             android:id="@+id/fight_vpager"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"/>-->
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -111,6 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp">
         <TextView
+                android:id="@+id/fight_txt_remain_score_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -148,6 +149,7 @@
         </RelativeLayout>
 
         <TextView
+                android:id="@+id/fight_txt_remain_score_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

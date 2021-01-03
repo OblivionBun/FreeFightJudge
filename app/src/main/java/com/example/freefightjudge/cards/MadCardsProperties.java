@@ -5,7 +5,7 @@ import com.example.freefightjudge.R;
 import java.util.Random;
 
 public class MadCardsProperties extends CardsProperties {
-  MadCardsProperties() {
+  public MadCardsProperties() {
     //ID of cards
     cardsIdAndWeight[0][0] = R.drawable.card_mad_01;
     cardsIdAndWeight[1][0] = R.drawable.card_mad_02;
@@ -20,7 +20,7 @@ public class MadCardsProperties extends CardsProperties {
   }
   
   @Override
-  int getRandomCard() {
+  public int getRandomCard() {
     Random random = new Random();
     int randomNumber = random.nextInt(10) + 1;
     

@@ -3,7 +3,7 @@ package com.example.freefightjudge.cards;
 import com.example.freefightjudge.R;
 
 public class ModCardsProperties extends CardsProperties {
-  ModCardsProperties() {
+  public ModCardsProperties() {
     //ID of cards
     cardsIdAndWeight[0][0] = R.drawable.card_mod_01;
     cardsIdAndWeight[1][0] = R.drawable.card_mod_02;

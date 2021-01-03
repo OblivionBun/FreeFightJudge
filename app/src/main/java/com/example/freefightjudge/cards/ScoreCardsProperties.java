@@ -7,7 +7,7 @@ import com.example.freefightjudge.cards.CardsProperties;
 import java.util.Random;
 
 public class ScoreCardsProperties extends CardsProperties {
-  ScoreCardsProperties() {
+  public ScoreCardsProperties() {
     //ID of cards
     cardsIdAndWeight[0][0] = R.drawable.card_score_01;
     cardsIdAndWeight[1][0] = R.drawable.card_score_02;
