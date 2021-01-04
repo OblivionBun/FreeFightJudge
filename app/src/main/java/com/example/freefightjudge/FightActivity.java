@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,9 +33,33 @@ public class FightActivity extends AppCompatActivity {
   
   private TextView txtSummaryScore;
   
-  private ImageView imgbtnWarningFirst;
+  private ImageButton imgbtnWarningFirst;
   
-  private ImageView imgbtnWarningSecond;
+  private ImageButton imgbtnWarningSecond;
+  
+  private ImageButton imgbtnPlusOneFirst;
+  
+  private ImageButton imgbtnPlusTwoFirst;
+  
+  private ImageButton imgbtnPlusThreeFirst;
+  
+  private ImageButton imgbtnPlusOneSecond;
+  
+  private ImageButton imgbtnPlusTwoSecond;
+  
+  private ImageButton imgbtnPlusThreeSecond;
+  
+  private TextView txtPlusOneMainText;
+  
+  private TextView txtPlusOneSubText;
+  
+  private TextView txtPlusTwoMainText;
+  
+  private TextView txtPlusTwoSubText;
+  
+  private TextView txtPlusThreeMainText;
+  
+  private TextView txtPlusThreeSubText;
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
