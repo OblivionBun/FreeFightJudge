@@ -1,31 +1,38 @@
 package com.example.freefightjudge.cards;
 
+import com.example.freefightjudge.Utility;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Random;
 
 public abstract class CardsProperties {
-  protected int[][] cardsIdAndWeight = new int[5][2];
+  protected LinkedHashMap<Integer, Integer> mapOfCardsAndIds = new LinkedHashMap<>();
   
   public int getRandomCard() {
-    Random random = new Random();
-    int randomNumber = random.nextInt(10) + 1;
+    ArrayList<Integer> weights = new ArrayList<>(mapOfCardsAndIds.values());
     
-    System.out.println(randomNumber);
+    int sum = Utility.calculateArraySum(weights);
     
-    if (randomNumber <= cardsIdAndWeight[0][1]) {
-      return cardsIdAndWeight[0][0];
-    } else if (randomNumber <= cardsIdAndWeight[0][1] + cardsIdAndWeight[1][1]) {
-      return cardsIdAndWeight[1][0];
-    } else if (randomNumber <= cardsIdAndWeight[0][1] + cardsIdAndWeight[1][1] +
-        cardsIdAndWeight[2][1]) {
-      return cardsIdAndWeight[2][0];
-    } else if (randomNumber <= cardsIdAndWeight[0][1] + cardsIdAndWeight[1][1] +
-        cardsIdAndWeight[2][1] + cardsIdAndWeight[3][1]) {
-      return cardsIdAndWeight[3][0];
-    } else if (randomNumber <= cardsIdAndWeight[0][1] + cardsIdAndWeight[1][1] +
-        cardsIdAndWeight[2][1] + cardsIdAndWeight[3][1] + cardsIdAndWeight[4][1]) {
-      return cardsIdAndWeight[4][0];
+    ArrayList<Integer> ids = new ArrayList<>(mapOfCardsAndIds.keySet());
+    
+    int[] resultArrayOfCards = new int[sum];
+    
+    for (int i = 0, k = 0, t = 0, elem = ids.get(t), weight = weights.get(t); i < sum; i++) {
+      if (weight == k) {
+        t++;
+        elem = ids.get(t);
+        weight = weights.get(t);
+        k = 0;
+      }
+      resultArrayOfCards[i] = elem;
+      k++;
     }
     
-     return 0; //return Id of card
+    
+    Random random = new Random();
+    return resultArrayOfCards[random.nextInt(sum)]; //return Id of card
   }
+  
+  
 }

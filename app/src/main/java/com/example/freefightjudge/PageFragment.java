@@ -15,13 +15,13 @@ import android.view.ViewGroup;
  */
 public class PageFragment extends Fragment {
   private static final String ARG_ITEM_NUMBER = "arg_item_number";
-
+  
   private int pageNumber;
-
+  
   public PageFragment() {
     // Required empty public constructor
   }
-
+  
   /**
    * Use this factory method to create a new instance of
    * this fragment using the provided parameters.
@@ -36,7 +36,7 @@ public class PageFragment extends Fragment {
     fragment.setArguments(args);
     return fragment;
   }
-
+  
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class PageFragment extends Fragment {
       pageNumber = getArguments().getInt(ARG_ITEM_NUMBER);
     }
   }
-
+  
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class PageFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_card, container, false);
       case 2:
         return inflater.inflate(R.layout.fragment_fight, container, false);
-        //TODO: Создать франгмент для снаряжения
+      //TODO: Создать франгмент для снаряжения
       default:
         return null;
     }

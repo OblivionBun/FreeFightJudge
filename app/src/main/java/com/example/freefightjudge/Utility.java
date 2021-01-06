@@ -7,6 +7,7 @@ import com.example.freefightjudge.cards.ModCardsProperties;
 import com.example.freefightjudge.cards.ScoreCardsProperties;
 import com.example.freefightjudge.cards.TimeCardsProperties;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Utility {
@@ -180,6 +181,14 @@ public class Utility {
     int sum = 0;
     for (int i = 0; i < array.length; i++) {
       sum = sum + array[i];
+    }
+    return sum;
+  }
+  
+  public static int calculateArraySum(ArrayList<Integer> array) {
+    int sum = 0;
+    for (int i = 0; i < array.size(); i++) {
+      sum = sum + array.get(i);
     }
     return sum;
   }
