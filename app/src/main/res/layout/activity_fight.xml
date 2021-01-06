@@ -168,12 +168,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_3_first"
+                android:id="@+id/fight_imgbtn_button_plus_3_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/fight_lnrlout_button_3"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_1_3"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_3"
@@ -199,12 +202,15 @@
         </LinearLayout>
 
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_3_second"
+                android:id="@+id/fight_imgbtn_button_plus_3_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/fight_lnrlout_button_3"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_2_3"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -212,12 +218,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_2_first"
+                android:id="@+id/fight_imgbtn_button_plus_2_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/fight_lnrlout_button_2"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_1_2"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_2"
@@ -243,12 +252,15 @@
         </LinearLayout>
 
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_2_second"
+                android:id="@+id/fight_imgbtn_button_plus_2_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/fight_lnrlout_button_2"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_2_2"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -256,12 +268,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_1_first"
+                android:id="@+id/fight_imgbtn_button_plus_1_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/fight_lnrlout_button_1"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_1_1"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_1"
@@ -287,11 +302,14 @@
         </LinearLayout>
 
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_1_second"
+                android:id="@+id/fight_imgbtn_button_plus_1_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/fight_lnrlout_button_1"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_2_1"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
     </RelativeLayout>
 </LinearLayout>
