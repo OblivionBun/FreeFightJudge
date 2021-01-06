@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
+import org.w3c.dom.Text;
+
 public class FightActivity extends AppCompatActivity {
   /*private Toolbar toolbar;
   
@@ -73,6 +75,32 @@ public class FightActivity extends AppCompatActivity {
     viewPager = findViewById(R.id.fight_vpager);
     viewPager.setAdapter(new FightTabAdapter(getSupportFragmentManager()));
     tabLayout.setupWithViewPager(viewPager);*/
+    
+    txtRemainScoreFirst = (TextView) findViewById(R.id.fight_txt_remain_score_first);
+    txtRemainScoreSecond = (TextView) findViewById(R.id.fight_txt_remain_score_second);
+    
+    txtNameFirst = (TextView) findViewById(R.id.fight_txt_name_first);
+    txtNameSecond = (TextView) findViewById(R.id.fight_txt_name_second);
+    
+    txtSummaryScore = (TextView) findViewById(R.id.fight_txt_summary_score);
+    
+    imgbtnWarningFirst = (ImageButton) findViewById(R.id.fight_imgbtn_warning_first);
+    imgbtnWarningSecond = (ImageButton) findViewById(R.id.fight_imgbtn_warning_second);
+    
+    imgbtnPlusOneFirst = (ImageButton) findViewById(R.id.fight_imgbtn_button_plus_1_first);
+    imgbtnPlusTwoFirst = (ImageButton) findViewById(R.id.fight_imgbtn_button_plus_2_first);
+    imgbtnPlusThreeFirst = (ImageButton) findViewById(R.id.fight_imgbtn_button_plus_3_first);
+    imgbtnPlusOneSecond = (ImageButton) findViewById(R.id.fight_imgbtn_button_plus_1_second);
+    imgbtnPlusTwoSecond = (ImageButton) findViewById(R.id.fight_imgbtn_button_plus_2_second);
+    imgbtnPlusThreeSecond = (ImageButton) findViewById(R.id.fight_imgbtn_button_plus_3_second);
+    
+    txtPlusOneMainText = (TextView) findViewById(R.id.fight_txt_name_button_1);
+    txtPlusTwoMainText = (TextView) findViewById(R.id.fight_txt_name_button_2);
+    txtPlusThreeMainText = (TextView) findViewById(R.id.fight_txt_name_button_3);
+    
+    txtPlusOneSubText = (TextView) findViewById(R.id.fight_txt_description_button_1);
+    txtPlusTwoSubText = (TextView) findViewById(R.id.fight_txt_description_button_2);
+    txtPlusThreeSubText = (TextView) findViewById(R.id.fight_txt_description_button_3);
   }
 }
 
