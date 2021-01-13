@@ -8,6 +8,22 @@
         tools:context=".FightActivity"
         android:orientation="vertical"
         style="@style/AppColor">
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fight_tbar"
+            style="@style/Toolbar"/>
+
+    <!--    <com.google.android.material.tabs.TabLayout
+                android:id="@+id/fight_tablout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:tabGravity="fill"
+                app:tabMode="fixed"/>
+
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/fight_vpager"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>-->
+
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -95,6 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp">
         <TextView
+                android:id="@+id/fight_txt_remain_score_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -132,6 +149,7 @@
         </RelativeLayout>
 
         <TextView
+                android:id="@+id/fight_txt_remain_score_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -150,12 +168,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_3_first"
+                android:id="@+id/fight_imgbtn_button_plus_3_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/fight_lnrlout_button_3"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_1_3"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_3"
@@ -181,12 +202,15 @@
         </LinearLayout>
 
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_3_second"
+                android:id="@+id/fight_imgbtn_button_plus_3_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/fight_lnrlout_button_3"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_2_3"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -194,12 +218,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_2_first"
+                android:id="@+id/fight_imgbtn_button_plus_2_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/fight_lnrlout_button_2"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_1_2"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_2"
@@ -225,12 +252,15 @@
         </LinearLayout>
 
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_2_second"
+                android:id="@+id/fight_imgbtn_button_plus_2_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/fight_lnrlout_button_2"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_2_2"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -238,12 +268,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_1_first"
+                android:id="@+id/fight_imgbtn_button_plus_1_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@id/fight_lnrlout_button_1"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_1_1"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
 
         <LinearLayout
                 android:id="@+id/fight_lnrlout_button_1"
@@ -269,11 +302,14 @@
         </LinearLayout>
 
         <ImageButton
-                android:id="@+id/fight_imgbtn_button_1_second"
+                android:id="@+id/fight_imgbtn_button_plus_1_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/fight_lnrlout_button_1"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/_button_score_2_1"
+                android:scaleType="centerInside"
+                android:layout_margin="15dp"/>
     </RelativeLayout>
 </LinearLayout>

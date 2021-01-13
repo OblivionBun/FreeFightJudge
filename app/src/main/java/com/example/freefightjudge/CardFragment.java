@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PageFragment#newInstance} factory method to
+ * Use the {@link CardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PageFragment extends Fragment {
-  private static final String ARG_ITEM_NUMBER = "arg_item_number";
+public class CardFragment extends Fragment {
+  private static final String ARG_ITEM_NUMBER = "param1";
   
   private int pageNumber;
   
-  public PageFragment() {
+  public CardFragment() {
     // Required empty public constructor
   }
   
@@ -27,10 +27,10 @@ public class PageFragment extends Fragment {
    * this fragment using the provided parameters.
    *
    * @param pageNumber Parameter 1.
-   * @return A new instance of fragment BlankFragment.
+   * @return A new instance of fragment CardFragment.
    */
-  public static PageFragment newInstance(int pageNumber) {
-    PageFragment fragment = new PageFragment();
+  public static CardFragment newInstance(int pageNumber) {
+    CardFragment fragment = new CardFragment();
     Bundle args = new Bundle();
     args.putInt(ARG_ITEM_NUMBER, pageNumber);
     fragment.setArguments(args);
@@ -48,16 +48,7 @@ public class PageFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
-    switch (pageNumber) {
-      case 0:
-        return inflater.inflate(R.layout.fragment_card, container, false);
-      case 1:
-        return inflater.inflate(R.layout.fragment_card, container, false);
-      case 2:
-        return inflater.inflate(R.layout.fragment_fight, container, false);
-      //TODO: Создать франгмент для снаряжения
-      default:
-        return null;
-    }
+    // Inflate the layout for this fragment
+    return inflater.inflate(R.layout.fragment_card, container, false);
   }
 }

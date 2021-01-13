@@ -23,7 +23,7 @@ public class FightActivity extends AppCompatActivity {
   
   private FightTabAdapter fightTabAdapter;
 
-  private PageFragment pageFragment;*/
+  private FightFragment pageFragment;*/
   
   private TextView txtRemainScoreFirst;
   
@@ -102,5 +102,9 @@ public class FightActivity extends AppCompatActivity {
     txtPlusTwoSubText = (TextView) findViewById(R.id.fight_txt_description_button_2);
     txtPlusThreeSubText = (TextView) findViewById(R.id.fight_txt_description_button_3);
   }
+  
+  
+  
+  
 }
 

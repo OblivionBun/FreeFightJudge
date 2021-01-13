@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
               "В будущем вместо этого сообщения откроется профиль",
               Toast.LENGTH_SHORT);
           toast.show();
+          intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+          startActivity(intent);
           break;
         case R.id.main_menu_btnlout_friends:
           intent = new Intent(MainActivity.this, SimpleDbTable.class);
