@@ -12,6 +12,7 @@ import java.util.Random;
 
 public class Utility {
   // CARD BLOCK
+  // TODO выенести все строки в R.string.
   public static String getTitleCard(int id) {
     switch (id) {
       case R.drawable.card_score_01:

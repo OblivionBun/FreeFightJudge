@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class FightTabAdapter extends FragmentStateAdapter {
-  final int PAGE_COUNT = 3;
+  final int PAGE_COUNT = 2;
+  
+  final static int[] tabTitles = new int[] {R.string.tab_name_cards, R.string.tab_name_fight};
   
   public FightTabAdapter(@NonNull FragmentActivity fragmentActivity) {
     super(fragmentActivity);
@@ -15,12 +17,13 @@ public class FightTabAdapter extends FragmentStateAdapter {
   @NonNull
   @Override
   public Fragment createFragment(int position) {
-    /*switch (position) {
+    switch (position) {
       case 0:
-      
+        return new CardFragment();
+      case 1:
+        return new FightFragment();
     }
-    return null;*/
-    return new FightFragment();
+    return null;
   }
   
   @Override

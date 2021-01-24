@@ -25,6 +25,6 @@
     <string name="txt_warning">Предупреждение</string>
     <string name="fight_txt_left">Осталось</string>
     <string name="fight_txt_summary_score">Поединок до х очков</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_name_cards">Карты</string>
+    <string name="tab_name_fight">Бой</string>
 </resources>
