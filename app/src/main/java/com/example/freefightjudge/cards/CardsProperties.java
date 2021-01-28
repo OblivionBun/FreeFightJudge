@@ -19,6 +19,7 @@ public abstract class CardsProperties {
     int[] resultArrayOfCards = new int[sum];
     
     for (int i = 0, k = 0, t = 0, elem = ids.get(t), weight = weights.get(t); i < sum; i++) {
+      // TODO исправить
       if (weight == k) {
         t++;
         elem = ids.get(t);
