@@ -20,7 +20,17 @@ import com.example.freefightjudge.cards.TimeCardsProperties;
 public class DrawCardsActivity extends AppCompatActivity {
   public static final int COUNT_OF_CARDS = 6;
   
-  public static int[] idRandomCard = new int[COUNT_OF_CARDS];
+  private static int[] idRandomCard = new int[COUNT_OF_CARDS];
+  
+  private static Card[] cards = new Card[COUNT_OF_CARDS];
+  
+  public static int[] getIdRandomCard() {
+    return idRandomCard;
+  }
+  
+  public static Card[] getCards() {
+    return cards;
+  }
   
   private Toolbar toolbar;
   
@@ -102,6 +112,7 @@ public class DrawCardsActivity extends AppCompatActivity {
     switch (view.getId()) {
       case R.id.draw_cards_btn_draw_cards:
       drawCards();
+      // TODO дизейблить кнопку на релизе
       break;
     }
   };
@@ -116,6 +127,7 @@ public class DrawCardsActivity extends AppCompatActivity {
           cardsProperties[i] = new ScoreCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
           imageViewScoreCard.setImageResource(idRandomCard[i]);
+          cards[i] = new Card(idRandomCard[i]);
           textViewNameScoreCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionScoreCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
           break;
@@ -123,6 +135,7 @@ public class DrawCardsActivity extends AppCompatActivity {
           cardsProperties[i] = new FightCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
           imageViewFightCard.setImageResource(idRandomCard[i]);
+          cards[i] = new Card(idRandomCard[i]);
           textViewNameFightCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionFightCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
           break;

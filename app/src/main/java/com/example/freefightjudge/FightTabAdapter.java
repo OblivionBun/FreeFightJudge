@@ -1,14 +1,18 @@
 package com.example.freefightjudge;
 
+import android.app.Activity;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+
 public class FightTabAdapter extends FragmentStateAdapter {
-  final int PAGE_COUNT = 2;
   
-  final static int[] tabTitles = new int[] {R.string.tab_name_cards, R.string.tab_name_fight};
+  private final int PAGE_COUNT = 2;
+  
+  public final static int[] tabTitles = new int[] {R.string.tab_name_cards, R.string.tab_name_fight};
   
   public FightTabAdapter(@NonNull FragmentActivity fragmentActivity) {
     super(fragmentActivity);
@@ -22,8 +26,9 @@ public class FightTabAdapter extends FragmentStateAdapter {
         return new CardFragment();
       case 1:
         return new FightFragment();
+      default:
+        return null;
     }
-    return null;
   }
   
   @Override
@@ -31,4 +36,3 @@ public class FightTabAdapter extends FragmentStateAdapter {
     return PAGE_COUNT;
   }
 }
-

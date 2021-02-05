@@ -127,6 +127,7 @@ public class FightFragment extends Fragment {
     imgbtnWarningFirst.setOnClickListener(onClickListener);
     imgbtnWarningSecond.setOnClickListener(onClickListener);
     
+    prepareScoreButtons();
     // TODO инициализировать базовое состояние страницы
     
     return view;
@@ -160,7 +161,7 @@ public class FightFragment extends Fragment {
   };
   
   private void changeScore(int fighter, int value) {
-    if (fighter == 0) {
+    if (fighter == 1) {
       txtRemainScoreFirst.setText(String.valueOf(
           Integer.parseInt(
               txtRemainScoreFirst
@@ -181,6 +182,72 @@ public class FightFragment extends Fragment {
     if (Integer.parseInt(txtRemainScoreFirst.getText().toString()) <= 0 ||
         Integer.parseInt(txtRemainScoreSecond.getText().toString()) <= 0) {
       // TODO реализовать изменение рейтинга
+      hideScoreButtons();
+    }
+  }
+  
+  private void hideScoreButtons() {
+    imgbtnPlusOneFirst.setVisibility(View.INVISIBLE);
+    imgbtnPlusOneSecond.setVisibility(View.INVISIBLE);
+    imgbtnPlusTwoFirst.setVisibility(View.INVISIBLE);
+    imgbtnPlusThreeFirst.setVisibility(View.INVISIBLE);
+    imgbtnPlusTwoSecond.setVisibility(View.INVISIBLE);
+    imgbtnPlusThreeSecond.setVisibility(View.INVISIBLE);
+  
+    txtPlusOneMainText.setVisibility(View.INVISIBLE);
+    txtPlusOneSubText.setVisibility(View.INVISIBLE);
+    txtPlusTwoMainText.setVisibility(View.INVISIBLE);
+    txtPlusTwoSubText.setVisibility(View.INVISIBLE);
+    txtPlusThreeMainText.setVisibility(View.INVISIBLE);
+    txtPlusThreeSubText.setVisibility(View.INVISIBLE);
+  }
+  
+  private void prepareScoreButtons() {
+    hideScoreButtons();
+    switch (CardFragment.getCards()[1/*fight card*/].getImage()) {
+      case R.drawable.card_fight_01:
+        imgbtnPlusOneFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusOneSecond.setVisibility(View.VISIBLE);
+        
+        txtPlusOneMainText.setVisibility(View.VISIBLE);
+        txtPlusOneSubText.setVisibility(View.VISIBLE);
+        break;
+      case R.drawable.card_fight_02:
+        imgbtnPlusOneFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusOneSecond.setVisibility(View.VISIBLE);
+        imgbtnPlusThreeFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusThreeSecond.setVisibility(View.VISIBLE);
+        
+        txtPlusOneMainText.setVisibility(View.VISIBLE);
+        txtPlusOneSubText.setVisibility(View.VISIBLE);
+        txtPlusThreeMainText.setVisibility(View.VISIBLE);
+        txtPlusThreeSubText.setVisibility(View.VISIBLE);
+        break;
+      case R.drawable.card_fight_03:
+        imgbtnPlusOneFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusOneSecond.setVisibility(View.VISIBLE);
+        imgbtnPlusTwoFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusThreeFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusTwoSecond.setVisibility(View.VISIBLE);
+        imgbtnPlusThreeSecond.setVisibility(View.VISIBLE);
+        
+        txtPlusOneMainText.setVisibility(View.VISIBLE);
+        txtPlusOneSubText.setVisibility(View.VISIBLE);
+        txtPlusTwoMainText.setVisibility(View.VISIBLE);
+        txtPlusTwoSubText.setVisibility(View.VISIBLE);
+        txtPlusThreeMainText.setVisibility(View.VISIBLE);
+        txtPlusThreeSubText.setVisibility(View.VISIBLE);
+        break;
+      case R.drawable.card_fight_04:
+        imgbtnPlusOneFirst.setVisibility(View.VISIBLE);
+        imgbtnPlusOneSecond.setVisibility(View.VISIBLE);
+        
+        txtPlusOneMainText.setVisibility(View.VISIBLE);
+        txtPlusOneSubText.setVisibility(View.VISIBLE);
+        break;
+      case R.drawable.card_fight_05:
+        //TODO реализовать обострение
+        break;
     }
   }
 }

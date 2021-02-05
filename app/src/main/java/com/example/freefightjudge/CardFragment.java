@@ -31,7 +31,17 @@ public class CardFragment extends Fragment {
   
   public static final int COUNT_OF_CARDS = 6;
   
-  public static int[] idRandomCard = new int[COUNT_OF_CARDS];
+  private static int[] idRandomCard = new int[COUNT_OF_CARDS];
+  
+  private static Card[] cards = new Card[COUNT_OF_CARDS];
+  
+  public static int[] getIdRandomCard() {
+    return idRandomCard;
+  }
+  
+  public static Card[] getCards() {
+    return cards;
+  }
   
   private Toolbar toolbar;
   
@@ -72,6 +82,8 @@ public class CardFragment extends Fragment {
   private TextView textViewDescriptionMadCard;
   
   private Button buttonDrawCards;
+  
+  private Button buttonToBattle;
   
   public CardFragment() {
     // Required empty public constructor
@@ -131,7 +143,11 @@ public class CardFragment extends Fragment {
     textViewDescriptionMadCard = (TextView) view.findViewById(R.id.draw_cards_txt_description_mad_card);
   
     buttonDrawCards = (Button) view.findViewById(R.id.draw_cards_btn_draw_cards);
+    buttonToBattle = (Button) view.findViewById(R.id.draw_cards_btn_to_fight);
     buttonDrawCards.setOnClickListener(onClickListener);
+    buttonToBattle.setOnClickListener(onClickListener);
+    
+    buttonToBattle.setEnabled(false);
     return view;
   }
   
@@ -139,6 +155,10 @@ public class CardFragment extends Fragment {
     switch (view.getId()) {
       case R.id.draw_cards_btn_draw_cards:
         drawCards();
+        buttonToBattle.setEnabled(true);
+        break;
+      case R.id.draw_cards_btn_to_fight:
+        ViewPagerActivity.getViewPager2().setCurrentItem(1);
         break;
     }
   };
@@ -151,6 +171,7 @@ public class CardFragment extends Fragment {
         case 0: //score card
           cardsProperties[i] = new ScoreCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
+          cards[i] = new Card(idRandomCard[i]);
           imageViewScoreCard.setImageResource(idRandomCard[i]);
           textViewNameScoreCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionScoreCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
@@ -159,6 +180,7 @@ public class CardFragment extends Fragment {
           cardsProperties[i] = new FightCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
           imageViewFightCard.setImageResource(idRandomCard[i]);
+          cards[i] = new Card(idRandomCard[i]);
           textViewNameFightCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionFightCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
           break;
@@ -166,6 +188,7 @@ public class CardFragment extends Fragment {
           cardsProperties[i] = new TimeCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
           imageViewTimeCard.setImageResource(idRandomCard[i]);
+          cards[i] = new Card(idRandomCard[i]);
           textViewNameTimeCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionTimeCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
           break;
@@ -173,6 +196,7 @@ public class CardFragment extends Fragment {
           cardsProperties[i] = new AreaCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
           imageViewAreaCard.setImageResource(idRandomCard[i]);
+          cards[i] = new Card(idRandomCard[i]);
           textViewNameAreaCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionAreaCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
           break;
@@ -180,6 +204,7 @@ public class CardFragment extends Fragment {
           cardsProperties[i] = new ModCardsProperties();
           idRandomCard[i] = cardsProperties[i].getRandomCard();
           imageViewModCard.setImageResource(idRandomCard[i]);
+          cards[i] = new Card(idRandomCard[i]);
           textViewNameModCard.setText(Utility.getTitleCard(idRandomCard[i]));
           textViewDescriptionModCard.setText(Utility.getDescriptionCard(idRandomCard[i]));
           break;
