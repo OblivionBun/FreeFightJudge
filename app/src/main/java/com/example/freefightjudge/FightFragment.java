@@ -157,8 +157,11 @@ public class FightFragment extends Fragment {
         break;
       case R.id.fight_imgbtn_warning_second:
         break;
+        // TODO override кнопку "назад"
     }
   };
+  
+  
   
   private void changeScore(int fighter, int value) {
     if (fighter == 1) {

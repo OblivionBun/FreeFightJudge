@@ -33,4 +33,13 @@ public class ViewPagerActivity extends AppCompatActivity {
       viewPager2.setCurrentItem(tab.getPosition(), true);
     }).attach();
   }
+  
+  @Override
+  public void onBackPressed() {
+    if (viewPager2.getCurrentItem() == 0) {
+      super.onBackPressed();
+    } else {
+      viewPager2.setCurrentItem(viewPager2.getCurrentItem() - 1);
+    }
+  }
 }
