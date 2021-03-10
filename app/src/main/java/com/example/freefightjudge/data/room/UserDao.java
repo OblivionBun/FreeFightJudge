@@ -2,7 +2,6 @@ package com.example.freefightjudge.data.room;
 
 import androidx.room.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao

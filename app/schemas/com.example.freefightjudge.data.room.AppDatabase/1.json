@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "d1defe3ea920501493f7de89ecc49966",
+    "identityHash": "b4526f964b09198b96d9ecea5bdf3d5b",
     "entities": [
       {
         "tableName": "User",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `first_name` TEXT, `last_name` TEXT, `date_register` TEXT, `score` INTEGER NOT NULL DEFAULT 0, `rank_id` INTEGER NOT NULL DEFAULT 1)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `first_name` TEXT, `last_name` TEXT, `date_register` TEXT, `score` INTEGER NOT NULL, `rank_id` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -36,15 +36,13 @@
             "fieldPath": "score",
             "columnName": "score",
             "affinity": "INTEGER",
-            "notNull": true,
-            "defaultValue": "0"
+            "notNull": true
           },
           {
             "fieldPath": "rankId",
             "columnName": "rank_id",
             "affinity": "INTEGER",
-            "notNull": true,
-            "defaultValue": "1"
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -86,7 +84,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd1defe3ea920501493f7de89ecc49966')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b4526f964b09198b96d9ecea5bdf3d5b')"
     ]
   }
 }

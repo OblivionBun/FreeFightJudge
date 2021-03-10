@@ -7,11 +7,27 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.example.freefightjudge.data.DatabaseWrapper;
 import com.example.freefightjudge.data.UserInfoDbHelper;
 
-public class SimpleDbTable extends AppCompatActivity {
+import java.time.Duration;
 
-  private UserInfoDbHelper userInfoDbHelper;
+public class SimpleDbTable extends AppCompatActivity {
+  public static final int COLUMN_ID = 0;
+
+  public static final int COLUMN_FIRST_NAME = 1;
+
+  public static final int COLUMN_LAST_NAME = 2;
+
+  public static final int COLUMN_DATE_REGISTER = 3;
+
+  public static final int COLUMN_SCORE = 4;
+
+  public static final int COLUMN_RANK = 5;
+
+  private DatabaseWrapper databaseWrapper;
 
   private TableLayout rootTableLayout;
 
@@ -26,8 +42,8 @@ public class SimpleDbTable extends AppCompatActivity {
 
     rootTableLayout = (TableLayout) findViewById(R.id.simple_db_table_tbl_lout_db_info);
 
-    userInfoDbHelper = new UserInfoDbHelper(getApplicationContext());
-    String[][] data = userInfoDbHelper.getAllUsersData(getApplicationContext());
+    databaseWrapper = new DatabaseWrapper();
+    String[][] data = databaseWrapper.getAllUsers();
 
     if (data != null) {
 
@@ -68,7 +84,7 @@ public class SimpleDbTable extends AppCompatActivity {
       }
       // TODO: Возможность редактирования и добавления новых бойцов
     } else {
-      System.out.println("data is NULL");
+      Toast.makeText(getApplicationContext(), "Возможно, вы не добавили ни одного пользователя.", Toast.LENGTH_SHORT).show();
     }
   }
 }

@@ -1,10 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DrawCardsActivity">
+        tools:context=".DrawCardsActivity"
+        android:orientation="vertical"
+        style="@style/AppColor"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+     <androidx.appcompat.widget.Toolbar
+            android:id="@+id/draw_cards_tbar"
+            style="@style/Toolbar"/>
+
+    <!--<RelativeLayout style="@style/Header">
+        <ImageButton
+                android:layout_width="55dp"
+                android:layout_height="0dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+
+                />
+
+        <TextView
+                android:id="@+id/draw_cards_header_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/header_fight"
+                style="@style/Header"
+                />
+    </RelativeLayout>-->
+
+    <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+        >
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+            >
+            <ImageView
+                    android:id="@+id/draw_cards_img_score_card"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/card_score_00"
+                    android:scaleType="centerInside"
+                    android:layout_marginEnd="5dp"/>
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+                <TextView
+                        android:id="@+id/draw_cards_txt_name_score_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Название карты"
+                        style="@style/BigText"/>
+                <TextView
+                        android:id="@+id/draw_cards_txt_description_score_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Подробное описание карты, растянувшееся на несколько строк,
+                        даже получается на три строки"
+                        style="@style/MainText"/>
+            </LinearLayout>
+        </LinearLayout>
+
+            <View style="@style/SeparatingLine"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                <ImageView
+                        android:id="@+id/draw_cards_img_fight_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_fight_00"
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="vertical">
+                    <TextView
+                            android:id="@+id/draw_cards_txt_name_fight_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Название карты"
+                            style="@style/BigText"/>
+                    <TextView
+                            android:id="@+id/draw_cards_txt_description_fight_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Подробное описание карты"
+                            style="@style/MainText"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/SeparatingLine"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                <ImageView
+                        android:id="@+id/draw_cards_img_time_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_time_00"
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="vertical">
+                    <TextView
+                            android:id="@+id/draw_cards_txt_name_time_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Название карты"
+                            style="@style/BigText"/>
+                    <TextView
+                            android:id="@+id/draw_cards_txt_description_time_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Подробное описание карты"
+                            style="@style/MainText"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/SeparatingLine"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                <ImageView
+                        android:id="@+id/draw_cards_img_area_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_area_00"
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="vertical">
+                    <TextView
+                            android:id="@+id/draw_cards_txt_name_area_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Название карты"
+                            style="@style/BigText"/>
+                    <TextView
+                            android:id="@+id/draw_cards_txt_description_area_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Подробное описание карты"
+                            style="@style/MainText"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/SeparatingLine"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                <ImageView
+                        android:id="@+id/draw_cards_img_mod_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_mod_00"
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="vertical">
+                    <TextView
+                            android:id="@+id/draw_cards_txt_name_mod_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Название карты"
+                            style="@style/BigText"/>
+                    <TextView
+                            android:id="@+id/draw_cards_txt_description_mod_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Подробное описание карты"
+                            style="@style/MainText"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/SeparatingLine"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/colorThirdLight"
+                    >
+                <ImageView
+                        android:id="@+id/draw_cards_img_mad_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/card_mad_00"
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:orientation="vertical">
+                    <TextView
+                            android:id="@+id/draw_cards_txt_description_mad_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Тут будут имена бойцов и вопрос: вскрываем ли фиолетовую карту"
+                            style="@style/BigText"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/draw_cards_btn_draw_cards"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Раздать карты"/>
+        <Button
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>
