@@ -1,5 +1,6 @@
 package com.example.freefightjudge;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -7,10 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.freefightjudge.data.UserInfoDbHelper;
-import com.example.freefightjudge.data.room.AppDatabase;
-
-import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     btnLoutFight.setOnClickListener(onClickListener);
 
   }
-
+  
   View.OnClickListener onClickListener = new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -57,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
               "В будущем вместо этого сообщения откроется профиль",
               Toast.LENGTH_SHORT);
           toast.show();
+          intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+          startActivity(intent);
           break;
         case R.id.main_menu_btnlout_friends:
           intent = new Intent(MainActivity.this, SimpleDbTable.class);

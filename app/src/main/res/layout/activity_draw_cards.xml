@@ -35,9 +35,10 @@
                 />
     </RelativeLayout>-->
 
-    <ScrollView
+    <!--<ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
         >
         <LinearLayout
                 android:layout_width="match_parent"
@@ -49,12 +50,13 @@
                 android:orientation="horizontal"
             >
             <ImageView
-                    android:id="@+id/draw_cards_imgbtn_score_card"
+                    android:id="@+id/draw_cards_img_score_card"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:src="@drawable/card_score_00"
-                    android:scaleType="centerInside"/>
+                    android:scaleType="centerInside"
+                    android:layout_marginEnd="5dp"/>
             <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -71,7 +73,8 @@
                         android:id="@+id/draw_cards_txt_description_score_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Подробное описание карты, растянувшееся на несколько строк"
+                        android:text="Подробное описание карты, растянувшееся на несколько строк,
+                        даже получается на три строки"
                         style="@style/MainText"/>
             </LinearLayout>
         </LinearLayout>
@@ -84,12 +87,13 @@
                     android:orientation="horizontal"
                     >
                 <ImageView
-                        android:id="@+id/draw_cards_imgbtn_fight_card"
+                        android:id="@+id/draw_cards_img_fight_card"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/card_fight_00"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -118,12 +122,13 @@
                     android:orientation="horizontal"
                     >
                 <ImageView
-                        android:id="@+id/draw_cards_imgbtn_time_card"
+                        android:id="@+id/draw_cards_img_time_card"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/card_time_00"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -153,12 +158,13 @@
                     android:orientation="horizontal"
                     >
                 <ImageView
-                        android:id="@+id/draw_cards_imgbtn_area_card"
+                        android:id="@+id/draw_cards_img_area_card"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/card_area_00"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -188,12 +194,13 @@
                     android:orientation="horizontal"
                     >
                 <ImageView
-                        android:id="@+id/draw_cards_imgbtn_mod_card"
+                        android:id="@+id/draw_cards_img_mod_card"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/card_mod_00"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -224,12 +231,13 @@
                     android:background="@color/colorThirdLight"
                     >
                 <ImageView
-                        android:id="@+id/draw_cards_imgbtn_mad_card"
+                        android:id="@+id/draw_cards_img_mad_card"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/card_mad_00"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:layout_marginEnd="5dp"/>
                 <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -245,6 +253,22 @@
             </LinearLayout>
         </LinearLayout>
 
-    </ScrollView>
+    </ScrollView>-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/draw_cards_btn_draw_cards"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Раздать карты"/>
+        <Button
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+    </LinearLayout>
 
 </LinearLayout>

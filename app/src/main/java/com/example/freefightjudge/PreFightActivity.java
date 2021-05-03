@@ -1,14 +1,21 @@
 package com.example.freefightjudge;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
 import android.os.Bundle;
 
 import com.example.freefightjudge.data.DatabaseWrapper;
 import com.example.freefightjudge.data.UserInfoDbHelper;
+import com.example.freefightjudge.data.room.AppDatabase;
+import com.example.freefightjudge.data.room.Executor;
+import com.example.freefightjudge.data.room.User;
+import com.example.freefightjudge.data.room.UserDao;
 
 public class PreFightActivity extends AppCompatActivity {
 
@@ -24,7 +31,7 @@ public class PreFightActivity extends AppCompatActivity {
 
   private Button btnEnterUsers;
 
-  DatabaseWrapper databaseWrapper;
+  //DatabaseWrapper databaseWrapper;
 
 
   @Override
@@ -46,7 +53,7 @@ public class PreFightActivity extends AppCompatActivity {
 
     btnEnterUsers.setOnClickListener(onClickListener);
 
-    databaseWrapper = new DatabaseWrapper();
+    //databaseWrapper = new DatabaseWrapper();
   }
 
   View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -55,12 +62,16 @@ public class PreFightActivity extends AppCompatActivity {
       switch (view.getId()) {
         case R.id.pre_fight_btn_add_new_user:
           System.out.println("кейс");
-          databaseWrapper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
-              edtTxtNewUserLastName.getText().toString());
+          //databaseWrapper.addNewUser(edtTxtNewUserFirstName.getText().toString(),
+          //    edtTxtNewUserLastName.getText().toString());
           break;
         case R.id.pre_fight_btn_enter_users:
+          Intent intent = new Intent(PreFightActivity.this, DrawCardsActivity.class);
+          startActivity(intent);
           break;
       }
     }
   };
+  
+  
 }

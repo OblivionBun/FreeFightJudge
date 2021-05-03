@@ -1,37 +1,38 @@
 package com.example.freefightjudge;
 
+import android.app.Activity;
+
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FightTabAdapter extends FragmentStatePagerAdapter {
-  final int PAGE_COUNT = 3;
 
-  public FightTabAdapter(@NonNull FragmentManager fm) {
-    super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+public class FightTabAdapter extends FragmentStateAdapter {
+  
+  private final int PAGE_COUNT = 2;
+  
+  public final static int[] tabTitles = new int[] {R.string.tab_name_cards, R.string.tab_name_fight};
+  
+  public FightTabAdapter(@NonNull FragmentActivity fragmentActivity) {
+    super(fragmentActivity);
   }
-
-  public FightTabAdapter(@NonNull FragmentManager fm, int behavior) {
-    super(fm, behavior);
-  }
-
+  
   @NonNull
   @Override
-  public Fragment getItem(int position) {
-  return PageFragment.newInstance(position);
+  public Fragment createFragment(int position) {
+    switch (position) {
+      case 0:
+        return new CardFragment();
+      case 1:
+        return new FightFragment();
+      default:
+        return null;
+    }
   }
-
+  
   @Override
-  public int getCount() {
+  public int getItemCount() {
     return PAGE_COUNT;
   }
-
-  @Nullable
-  @Override
-  public CharSequence getPageTitle(int position) {
-    return super.getPageTitle(position);
-  }
 }
-
